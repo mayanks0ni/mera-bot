@@ -10,7 +10,7 @@ bot.on('ready', () =>{
 
 bot.on('guildMemberAdd', member =>{
 	  
-	const channel = member.guild.channels.find(channel => channel.name === "welcome");
+	const channel = member.guild.channels.find(channel => channel.name === "〢join-leave");
 	if(!channel) return;
 	const welcomeembed = new Discord.RichEmbed()
 	.setDescription(`${member}, Welcome to our server, hope you enjoy your stay here!`)
@@ -20,7 +20,7 @@ bot.on('guildMemberAdd', member =>{
 })
 
 bot.on('guildMemberRemove', member =>{
-	const channel1 = member.guild.channels.find(channel => channel.name === "welcome");
+	const channel1 = member.guild.channels.find(channel => channel.name === "〢join-leave");
 	if(!channel1) return;
 	const leaveembed = new Discord.RichEmbed()
 	.setTitle(`${member}, has left!`)
