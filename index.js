@@ -126,4 +126,4 @@ case 'del':
 }});
 
 
-bot.login('NjM2OTgyODc2Mjg5ODkyMzUy.Xc2Bxg.Lxw4uuIKbNJgCwrxoQq3DstMN4c');
+bot.login(process.env.BOT_TOKEN);
