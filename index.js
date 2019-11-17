@@ -42,7 +42,7 @@ bot.on('message', message=>{
 	  case 'help':
 		  const embed = new Discord.RichEmbed()
 		  .setTitle('Basic help commands!')
-		  .addField('info', 'Gives the info of the owner!')
+		  .addField('info', 'Gives the info of the programmer!')
 		  .addField('ban', 'Moderation command for banning a Member!')
 		  .addField('kick', 'Moderation command for kicking a Member!')
 		  .addField('avatar', 'Basic command to view the avatar URl of the mentioned user!')
@@ -57,7 +57,7 @@ bot.on('message', message=>{
 			  const member1 = message.guild.member(user1);
 
 			  if (member1) {
-				member.kick('Optional reason that will display in the audit logs')
+				member1.kick('Optional reason that will display in the audit logs')
 					.then(() => {
 					message.reply(`Successfully kicked ${user.tag}`);
 				}).catch(err => {
