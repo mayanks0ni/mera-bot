@@ -69,9 +69,7 @@ bot.on('message', message=>{
 				});
 			 } else {
 				message.reply('That user isn\'t in this guild!');
-				 } else {
-                                message.reply('You didn\'t mention the user to kick!');
-                                      }
+				 }
 				 break;
 			  }
 			  case 'ban':
