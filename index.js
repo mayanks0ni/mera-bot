@@ -30,7 +30,7 @@ bot.on('guildMemberRemove', member =>{
 
 bot.on('message', message=>{
 
-if (!command.startsWith(prefix)){
+if (!command.startsWith(PREFIX)){
             return;
             }
 
