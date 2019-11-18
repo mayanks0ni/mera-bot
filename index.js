@@ -5,7 +5,7 @@ const PREFIX = '~';
 
 bot.on('ready', () =>{
 	console.log('The bot is online!');
-	bot.user.setActivity('SpideY\'s dick', {type: "WATCHING"});
+	bot.user.setActivity('To ~help', {type: "LISTENING"});
 });
 
 bot.on('guildMemberAdd', member =>{
