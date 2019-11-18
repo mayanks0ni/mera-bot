@@ -74,11 +74,11 @@ bot.on('message', message=>{
 			  }
 			  case 'ban':
 					if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
-					const user = message.mentions.users.first();
-					if (user) {
-						const member = message.guild.member(user);
-						if (member) {
-							member.ban({
+					const user2 = message.mentions.users.first();
+					if (user2) {
+						const member2 = message.guild.member(user2);
+						if (member2) {
+							member2.ban({
 								reason: 'They were bad!',
         }).then(() => {
 			const banembed = new Discord.RichEmbed()
