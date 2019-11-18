@@ -106,7 +106,7 @@ bot.on('message', message=>{
 	break;
 }
 
-case 'members':
+case 'meminfo':
 	 const memberembed = new Discord.RichEmbed()
 	 .setDescription(`Total Members = ${message.guild.memberCount}`)
 	 .setColor(0x8cf5a8)
