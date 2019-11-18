@@ -51,6 +51,7 @@ bot.on('message', message=>{
 		  break;
 
 	  case 'kick':
+			  if(!message.guild) return;
 			if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 		  const user1 = message.mentions.users.first();
 		  if (user1) {
@@ -69,7 +70,9 @@ bot.on('message', message=>{
 				});
 			 } else {
 				message.reply('That user isn\'t in this guild!');
-				 } 
+				 } else {
+                                message.reply('You didn\'t mention the user to kick!');
+                                      }
 				 break;
 			  }
 			  case 'ban':
