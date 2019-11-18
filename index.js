@@ -58,7 +58,7 @@ bot.on('message', message=>{
 			  const member1 = message.guild.member(user1);
 
 			  if (member1) {
-				member.kick('Optional reason that will display in the audit logs')
+				member1.kick('Optional reason that will display in the audit logs')
 					.then(() => {
 					message.reply(`Successfully kicked ${user.tag}`);
 				}).catch(err => {
@@ -76,7 +76,7 @@ bot.on('message', message=>{
 				 break;
 			  }
 			  case 'ban':
-					if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
+					if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 					const user = message.mentions.users.first();
 					if (user) {
 						const member = message.guild.member(user);
