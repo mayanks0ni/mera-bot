@@ -100,7 +100,7 @@ bot.on('message', message=>{
 	}
 } else {
 	const nomention = new Discord.RichEmbed()
-	.setDescription('You didn\'t mention the user to ban!')
+	.setDescription('You didn\'t mention the user to kick/ban!')
 	.setColor(0x6c00fa)
 	message.channel.sendEmbed(nomention);
 	break;
