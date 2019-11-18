@@ -30,10 +30,6 @@ bot.on('guildMemberRemove', member =>{
 
 bot.on('message', message=>{
 
-if (!command.startsWith(PREFIX)){
-            return;
-            }
-else {
 	  let args = message.content.substring(PREFIX.length).split(" ");
 
 	  switch(args[0]){
@@ -128,7 +124,7 @@ case 'avatar':
 
 case 'del':
 	message.channel.bulkDelete(args[1]);
-}});}
+}});
 
 
 bot.login(process.env.BOT_TOKEN);
