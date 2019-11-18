@@ -37,6 +37,7 @@ bot.on('message', message=>{
 		  const Infoembed = new Discord.RichEmbed()
 		  .setDescription('I am a bot programmed by SpideY!')
 		  message.channel.sendEmbed(Infoembed);
+                  message.react('😀');
 		  break;
 		  
 	  case 'help':
