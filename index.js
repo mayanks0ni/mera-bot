@@ -52,7 +52,8 @@ bot.on('message', message=>{
 		  break;
 
 	  case 'kick':
-			if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
+			if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('❌YOU DON\'T HAVE ENOUGH PERMISSIONS!❌')
+                           message.delete(5000);
 		  const user1 = message.mentions.users.first();
 		  if (user1) {
 			  const member1 = message.guild.member(user1);
@@ -69,12 +70,13 @@ bot.on('message', message=>{
 					console.error(err);
 				});
 			 } else {
-				message.reply('That user isn\'t in this guild!');
+				message.reply('❌That user isn\'t in this guild!❌');
 				 }
 				 break;
 			  }
 			  case 'ban':
-					if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
+					if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('❌YOU DON\'T HAVE ENOUGH PERMISSIONS!❌')
+                                        message.delete(5000);
 					const user2 = message.mentions.users.first();
 					if (user2) {
 						const member2 = message.guild.member(user2);
@@ -88,7 +90,7 @@ bot.on('message', message=>{
 			message.channel.sendEmbed(banembed);
 		}).catch(err => {
 			const errorbanembed = new Discord.RichEmbed()
-			.setDescription('The user cannot be banned due to no permissions or due to mine role is below that members role!')
+			.setDescription('❌The user cannot be banned due to no permissions or due to mine role is below that members role!❌')
 			.setColor(0xfa0000)
 			message.channel.sendEmbed(errorbanembed);
 			console.error(err);
@@ -101,7 +103,7 @@ bot.on('message', message=>{
 	}
 } else {
 	const nomention = new Discord.RichEmbed()
-	.setDescription('You didn\'t mention the user to kick/ban!')
+	.setDescription('❌You didn\'t mention the user to kick/ban!❌')
 	.setColor(0x6c00fa)
 	message.channel.sendEmbed(nomention);
 	break;
