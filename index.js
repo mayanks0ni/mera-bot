@@ -23,7 +23,7 @@ bot.on('guildMemberRemove', member =>{
 	const channel1 = member.guild.channels.find(channel => channel.name === "〢join-leave");
 	if(!channel1) return;
 	const leaveembed = new Discord.RichEmbed()
-	.setTitle(`${member}, has left!`)
+	.setTitle('Member left!)
 	.setDescription(`${member}, has left the server!`)
 	channel1.send(leaveembed);
 })
