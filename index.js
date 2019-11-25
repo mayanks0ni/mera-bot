@@ -48,7 +48,11 @@ bot.on('message', message=>{
 		  .addField('kick', 'Moderation command for kicking a Member!')
 		  .addField('avatar', 'Basic command to view the avatar URl of the mentioned user!')
 		  .addField('members', 'A Command to view the member count of the server!')
-		  message.channel.sendEmbed(embed);
+		  message.author.sendEmbed(embed);
+                  message.react('☑️');
+                  const helpdm = new Discord.RichEmbed()
+                  .setDescription('Check Your DM!')
+                  message.channel.sendEmbed(helpdm);
 		  break;
 
 	  case 'kick':
