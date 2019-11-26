@@ -126,13 +126,36 @@ case 'avatar':
 	const user3 = message.mentions.users.first();
    const avatarembed = new Discord.RichEmbed()
    .setTitle(`User Avatar Link For ${user3.tag}`)
-   .setDescription(`${user3.avatarURL}`)
+   .setDescription(`${user3.avatar}`)
    .setColor(0xfccc2b)
    message.channel.sendEmbed(avatarembed);
    break;
 
-case 'del':
+		  case 'del':
+       message.delete()
 	message.channel.bulkDelete(args[1]);
+			  
+		  case 'announce':
+			  if(!message.member.hasPermission("MANAGE_MESSAGES") return 
+			     const noperms4 = new Discord.RichEmbed()
+			     .setDescription('You don\'t have enough permissions')
+			     message.channel.sendEmbed(noperms4);
+			  message.delete()
+			  let mChannel = message.mention.channels.first();
+			  let argresult;
+			  if(!mChannel){
+				  argresult = args.slice(1).join(" ")
+				  const noc = new Discord.RichEmbed()
+				  .setDescription(`${argresult}`)
+				  mChannel.sendEmbed(noc);
+			  }
+			  else{
+				  argresult = args.join(" ")
+				  const ch = new Discord.RichEmbed()
+				  .setDescription(`${argresult}`)
+				  message.channel.sendEmbed(ch);
+			  }
+			  
 }});
 
 
