@@ -135,7 +135,7 @@ case 'avatar':
        message.delete()
 	message.channel.bulkDelete(args[1]);
                   case 'mention'
-        message.delete();
+        message.delete()
         const mr = message.mentions.roles.first();
         message.channel.send(mr);
         break;
