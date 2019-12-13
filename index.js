@@ -166,7 +166,8 @@ case 'avatar':
 			  bot.channels.get("629716423656079380").send(suggested)
 			  .then(function (message) {
 				message.react("👍")
-				message.react("👎")})
+				.then(() => message.react('👎'))})
+                                break;
 	    case 'say':
 			  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 			message.delete()
