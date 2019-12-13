@@ -152,6 +152,7 @@ case 'avatar':
 			  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
        message.delete()
 	message.channel.bulkDelete(args[1]);
+        break;
                   
 	          case 'suggest':
 			message.delete()
