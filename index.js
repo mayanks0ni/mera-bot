@@ -144,7 +144,7 @@ case 'avatar':
 			  .setDescription(`${suggestion}`)
 			  .setColor(0xccff80)
 			  .setFooter(`Suggestion by ${message.author.tag} at ${message.createdAt}`)
-			  bot.channels.get("564520625599938570").send(suggested)
+			  bot.channels.get("629716423656079380").send(suggested)
 			  .then(function (message) {
 				message.react("👍")
 				message.react("👎")})
