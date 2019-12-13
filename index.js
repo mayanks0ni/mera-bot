@@ -148,6 +148,10 @@ case 'avatar':
 			  .then(function (message) {
 				message.react("👍")
 				message.react("👎")})
+	    case 'say':
+			message.delete()
+			let saymessage = args.slice(1).join(" ");
+			message.channel.send(saymessage);
         
 			  
 }});
