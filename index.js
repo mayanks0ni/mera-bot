@@ -40,19 +40,36 @@ bot.on('message', message=>{
                   message.react('😀');
 		  break;
 		  
-	  case 'help':
+	  case 'helpdm':
 		  const embed = new Discord.RichEmbed()
 		  .setTitle('Basic help commands!')
 		  .addField('info', 'Gives the info of the programmer!')
 		  .addField('ban', 'Moderation command for banning a Member!')
 		  .addField('kick', 'Moderation command for kicking a Member!')
 		  .addField('avatar', 'Basic command to view the avatar URl of the mentioned user!')
-		  .addField('members', 'A Command to view the member count of the server!')
+		  .addField('meminfo', 'A Command to view the member count of the server!')
+		  .addField('say', 'A command to send messages through the bot!')
+		  .addField('announce', 'A command to announce messages!')
+		  .addField('suggest', 'A command to give suggestions!')
 		  message.author.sendEmbed(embed);
                   message.react('☑️');
                   const helpdm = new Discord.RichEmbed()
                   .setDescription('Check Your DM!')
                   message.channel.sendEmbed(helpdm);
+		  break;
+			  
+         case 'help':
+		  const embed1 = new Discord.RichEmbed()
+		  .setTitle('Basic help commands!')
+		  .addField('info', 'Gives the info of the programmer!')
+		  .addField('ban', 'Moderation command for banning a Member!')
+		  .addField('kick', 'Moderation command for kicking a Member!')
+		  .addField('avatar', 'Basic command to view the avatar URl of the mentioned user!')
+		  .addField('meminfo', 'A Command to view the member count of the server!')
+		  .addField('say', 'A command to send messages through the bot!')
+		  .addField('announce', 'A command to announce messages!')
+		  .addField('suggest', 'A command to give suggestions!')
+                  message.channel.sendEmbed(embed1);
 		  break;
 
 	  case 'kick':
@@ -132,6 +149,7 @@ case 'avatar':
    break;
 
 		  case 'del':
+			  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
        message.delete()
 	message.channel.bulkDelete(args[1]);
                   
@@ -149,9 +167,31 @@ case 'avatar':
 				message.react("👍")
 				message.react("👎")})
 	    case 'say':
+			  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 			message.delete()
 			let saymessage = args.slice(1).join(" ");
 			message.channel.send(saymessage);
+			  
+            case 'announce':
+			if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
+			let ancmessage;
+			let mchannel = message.mentions.channels.first()
+            message.delete()
+			if(mchannel){
+				 ancmessage = args.slice(2).join(" ");
+				const anc = new Discord.RichEmbed()
+				.setDescription(`${ancmessage}`)
+				.setFooter(`Announced by ${message.author.tag}`)
+				.setColor(0x6bffe1)
+				mchannel.sendEmbed(anc);
+			}else{
+                ancmessage = args.slice(1).join(" ");
+				const anc1 = new Discord.RichEmbed()
+				.setDescription(`${ancmessage}`)
+				.setFooter(`Announced by ${message.author.tag}`)
+				.setColor(0xffc859)
+				message.channel.sendEmbed(anc1);
+			}
         
 			  
 }});
