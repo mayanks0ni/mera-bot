@@ -134,11 +134,20 @@ case 'avatar':
 		  case 'del':
        message.delete()
 	message.channel.bulkDelete(args[1]);
-                  case 'mention':
-        message.delete()
-        const mr = message.mentions.roles.first();
-        message.channel.send(mr);
-        break;
+                  
+	          case 'suggest':
+			message.delete()
+			let suggestion;
+			  suggestion = args.slice(1).join(" ");
+			  const suggested = new Discord.RichEmbed()
+			  .setTitle('Suggestion')
+			  .setDescription(`${suggestion}`)
+			  .setColor(0xccff80)
+			  .setFooter(`Suggestion by ${message.author.tag} at ${message.createdAt}`)
+			  bot.channels.get("564520625599938570").send(suggested)
+			  .then(function (message) {
+				message.react("👍")
+				message.react("👎")})
         
 			  
 }});
