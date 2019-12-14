@@ -146,12 +146,6 @@ case 'avatar':
    .setImage(`${user3.displayAvatarURL}`)
    .setColor(0xfccc2b)
    message.channel.sendEmbed(avatarembed);
-  if(!user3){
-    const userav = new Discord.RichEmbed
-      .setTitle(`User Avatar for ${message.author.tag}`)
-      .setImage(`${message.author.displayAvatarURL}`)
-      .setColor(0xfccc2b)
-      message.channel.sendEmbed(userav);
    break;
 
 		  case 'del':
