@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const PREFIX = '~'; 
+const PREFIX = '+'; 
 
 bot.on('ready', () =>{
 	console.log('The bot is online!');
-	bot.user.setActivity('~help', {type: "LISTENING"});
+	bot.user.setActivity('+help', {type: "LISTENING"});
 });
 
 bot.on('guildMemberAdd', member =>{
