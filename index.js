@@ -142,10 +142,16 @@ case 'meminfo':
 case 'avatar':
 	const user3 = message.mentions.users.first();
    const avatarembed = new Discord.RichEmbed()
-   .setTitle(`User Avatar Link For ${user3.tag}`)
+   .setTitle(`User Avatar For ${user3.tag}`)
    .setImage(`${user3.displayAvatarURL}`)
    .setColor(0xfccc2b)
    message.channel.sendEmbed(avatarembed);
+  if(!user3){
+    const userav = new Discord.RichEmbed
+      .setTitle(`User Avatar for ${message.author.tag}`)
+      .setImage(`${message.author.displayAvatarURL}`)
+      .setColor(0xfccc2b)
+      message.channel.sendEmbed(userav);
    break;
 
 		  case 'del':
