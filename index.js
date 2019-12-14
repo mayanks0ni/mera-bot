@@ -143,7 +143,7 @@ case 'avatar':
 	const user3 = message.mentions.users.first();
    const avatarembed = new Discord.RichEmbed()
    .setTitle(`User Avatar Link For ${user3.tag}`)
-   .setDescription(`${user3.displayAvatarURL}`)
+   .setImage(`${user3.displayAvatarURL}`)
    .setColor(0xfccc2b)
    message.channel.sendEmbed(avatarembed);
    break;
@@ -169,7 +169,6 @@ case 'avatar':
 				.then(() => message.react('👎'))})
                                 break;
 	    case 'say':
-			  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 			message.delete()
 			let saymessage = args.slice(1).join(" ");
 			message.channel.send(saymessage);
