@@ -143,7 +143,7 @@ case 'avatar':
 	const user3 = message.mentions.users.first();
    const avatarembed = new Discord.RichEmbed()
    .setTitle(`User Avatar Link For ${user3.tag}`)
-   .setDescription(`${user3.avatar}`)
+   .setDescription(`${user3.displayAvatarURL}`)
    .setColor(0xfccc2b)
    message.channel.sendEmbed(avatarembed);
    break;
