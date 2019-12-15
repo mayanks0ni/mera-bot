@@ -9,12 +9,12 @@ bot.on('ready', () =>{
 });
 
 bot.on('guildMemberAdd' member =>{
-	const channel2 = member.guild.channels.find(channel => channel.name === "〢join-leave");
-	if(!channel2) return;
+	const channel = member.guild.channels.find(channel => channel.name === "〢join-leave");
+	if(!channel) return;
 	const joinembed = new Discord.RichEmbed()
 	.setDescription(`Welcome to our server ${member}! Hope you enjoy your stay here!`)
         .setColor(0x3dffcf)
-	channel2.send(joinembed);
+	channel.send(joinembed);
 })
 
 bot.on('guildMemberRemove', member =>{
