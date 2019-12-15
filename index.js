@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const Canvas = require('canvas');
 
 const PREFIX = '+'; 
 
@@ -9,39 +8,14 @@ bot.on('ready', () =>{
 	bot.user.setActivity('+help', {type: "LISTENING"});
 });
 
-bot.on('guildMemberAdd', async member => {
-	const channel = member.guild.channels.find(ch => ch.name === '〢join-leave');
-	if (!channel) return;
-
-	const canvas = Canvas.createCanvas(728, 410);
-	const ctx = canvas.getContext('2d');
-
-	const background = await Canvas.loadImage('https://cdn.discordapp.com/attachments/564520348821749766/655834220874432513/love-live-sunshine-simple-anime-girls-anime-wallpaper-preview.jpg');
-	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-	ctx.strokeStyle = '#74037b';
-	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-	
-	ctx.font = '28px sans-serif';
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText('Welcome to our server,', canvas.width / 2.5, canvas.height / 3.5);
-
-	ctx.font = applyText(canvas, `${member.displayName}!`);
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${member.displayName}!`, canvas.width / 2.5, canvas.height / 1.8);
-
-	ctx.beginPath();
-	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
-	ctx.closePath();
-	ctx.clip();
-
-	const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
-	ctx.drawImage(avatar, 25, 25, 200, 200);
-
-	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-
-	channel.send(`Welcome to our server, ${member}!`, attachment);
-});
+bot.on('guildMemberAdd' member =>{
+	const channel2 = member.guild.channels.find(channel => channel.name === "〢join-leave");
+	if(!channel2) return;
+	const joinembed = new Discord.RichEmbed()
+	.setDescription(`Welcome to our server ${member}! Hope you enjoy your stay here!`)
+        .setColor(0x3dffcf)
+	channel2.send(joinembed);
+})
 
 bot.on('guildMemberRemove', member =>{
 	const channel1 = member.guild.channels.find(channel => channel.name === "〢join-leave");
