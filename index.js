@@ -49,6 +49,8 @@ bot.on('message', message=>{
 		  .addField('say', 'A command to send messages through the bot!')
 		  .addField('announce', 'A command to announce messages!')
 		  .addField('suggest', 'A command to give suggestions!')
+                  .addField('dm', 'Directly send the mentioned user message through the bot!')
+                  .setColor(0xff47bf)
 		  message.author.sendEmbed(embed);
                   message.react('☑️');
                   const helpdm = new Discord.RichEmbed()
@@ -67,6 +69,8 @@ bot.on('message', message=>{
 		  .addField('say', 'A command to send messages through the bot!')
 		  .addField('announce', 'A command to announce messages!')
 		  .addField('suggest', 'A command to give suggestions!')
+                  .addField('dm', 'Directly send the mentioned user message through the bot!')
+                  .setColor(0xff47bf)
                   message.channel.sendEmbed(embed1);
 		  break;
 
