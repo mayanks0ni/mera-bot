@@ -194,7 +194,8 @@ case 'avatar':
 				break;
 			}
         case 'dm':
-			const dmtext = args.slice(2).join(" ");
+			if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('❌YOU DON\'T HAVE ENOUGH PERMISSIONS!❌')
+			  const dmtext = args.slice(2).join(" ");
 			const dmuser = message.mentions.users.first()
 			message.delete()
 			if(!dmuser) return;
