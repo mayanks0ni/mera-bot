@@ -193,7 +193,16 @@ case 'avatar':
 				message.channel.sendEmbed(anc1);
 				break;
 			}
-        
+        case 'dm':
+			const dmtext = args.slice(2).join(" ");
+			const dmuser = message.mentions.users.first()
+			message.delete()
+			if(!dmuser) return;
+			const dmmessage = new Discord.RichEmbed()
+		.setDescription(`${dmtext}`)
+		.setFooter(`From IAT Bot at ${message.createdAt}`)
+		.setColor(0x41faa1)
+		dmuser.sendEmbed(dmmessage);
 			  
 }});
 
