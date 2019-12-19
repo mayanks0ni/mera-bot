@@ -77,7 +77,7 @@ bot.on('message', message=>{
 	  case 'kick':
 			if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('❌YOU DON\'T HAVE ENOUGH PERMISSIONS!❌')
                            message.delete(5000);
-		  const user1 = message.mentions.users.first();
+		  const user1 = message.mentions.users.first()
 		  if (user1) {
 			  const member1 = message.guild.member(user1);
 
@@ -100,7 +100,7 @@ bot.on('message', message=>{
 			  case 'ban':
 					if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('❌YOU DON\'T HAVE ENOUGH PERMISSIONS!❌')
                                         message.delete(5000);
-					const user2 = message.mentions.users.first();
+					const user2 = message.mentions.users.first()
 					if (user2) {
 						const member2 = message.guild.member(user2);
 						if (member2) {
