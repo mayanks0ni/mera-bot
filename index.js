@@ -89,10 +89,6 @@ bot.on('message', message=>{
 					.then(() => {
 					message.reply(`Successfully kicked ${user.tag}`);
 				}).catch(err => {
-					const error = new Discord .RichEmbed()
-					.setDescription('The user cannot be kicked due to no permissions or due to mine role is below that members role!')
-					.setColor(0xfa0000)
-					message.channel.sendEmbed(error);
 					console.error(err);
 				});
 			 } else {
