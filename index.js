@@ -78,6 +78,7 @@ bot.on('message', message=>{
 		  break;
 
 	  case 'kick':
+			  message.delete()
 			if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 			const user1 = message.mentions.users.first();
 			if (user1) {
@@ -99,6 +100,7 @@ bot.on('message', message=>{
 				break;
 			}
 		case 'ban':
+			  message.delete()
 			if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 			const user = message.mentions.users.first();
 			if (user) {
