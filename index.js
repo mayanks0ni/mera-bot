@@ -86,7 +86,10 @@ bot.on('message', message=>{
 
 				if (member1) {
 					member1.kick('Optional reason that will display in the audit logs').then(() => {
-						message.reply(`Successfully kicked ${user1.tag}`);
+						const kickembed = new Discord.RichEmbed()
+						        .setTitle('Member Kicked')
+							.setDescription(`Succesfully kicked ${user.tag}`)
+							.setColor(0x00fa21)
 					}).catch(err => {
 						const error = new Discord.RichEmbed()
 							.setDescription('The user cannot be kicked due to no permissions or due to mine role is below that members role!')
@@ -110,6 +113,7 @@ bot.on('message', message=>{
 						reason: 'They were bad!',
 					}).then(() => {
 						const banembed = new Discord.RichEmbed()
+						        .setTitle('Member Bannned')
 							.setDescription(`Succesfully bannned ${user.tag}`)
 							.setColor(0x00fa21)
 						message.channel.sendEmbed(banembed);
