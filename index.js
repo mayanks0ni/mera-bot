@@ -12,8 +12,11 @@ bot.on('guildMemberAdd', member =>{
 	const channel = member.guild.channels.find(channel => channel.name === "〢join-leave");
 	if(!channel) return;
 	const joinembed = new Discord.RichEmbed()
-	.setDescription(`Welcome to our server ${member}! Hope you enjoy your stay here!`)
-        .setColor(0x3dffcf)
+	        .setTitle('Welcome To Indian Anime TV\'s Server!')
+		.setDescription(`Welcome to our server ${member}! Hope you enjoy your stay here!`)
+		.setImage('https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
+		.setFooter('By IAT Bot!')
+		.setColor(0x3dffcf)
 	channel.send(joinembed);
 })
 
