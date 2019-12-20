@@ -24,7 +24,7 @@ bot.on('guildMemberRemove', member =>{
 	const channel1 = member.guild.channels.find(channel => channel.name === "〢join-leave");
 	if(!channel1) return;
 	const leaveembed = new Discord.RichEmbed()
-	.setDescription(`${member}, has left the server!`)
+	.setDescription(`${member}, has left the server 🙁. Hope you'll be back soon!`)
         .setColor(0x3dffcf)
 	channel1.send(leaveembed);
 })
