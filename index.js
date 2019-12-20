@@ -78,6 +78,7 @@ bot.on('message', message=>{
 		  break;
 
 	  case 'kick':
+			  message.delete()
 			if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
 			const user1 = message.mentions.users.first();
 			if (user1) {
@@ -85,10 +86,7 @@ bot.on('message', message=>{
 
 				if (member1) {
 					member1.kick('Optional reason that will display in the audit logs').then(() => {
-						const kickembed = new Discord.RichEmbed()
-						        .setTitle('Member Kicked')
-							.setDescription(`Succesfully kicked ${user.tag}`)
-							.setColor(0x00fa21)
+						message.reply(`Successfully kicked ${user1.tag}`);
 					}).catch(err => {
 						const error = new Discord.RichEmbed()
 							.setDescription('The user cannot be kicked due to no permissions or due to mine role is below that members role!')
