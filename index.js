@@ -78,60 +78,59 @@ bot.on('message', message=>{
 		  break;
 
 	  case 'kick':
-			if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('❌YOU DON\'T HAVE ENOUGH PERMISSIONS!❌')
-                           message.delete(5000);
-		  const user1 = message.mentions.users.first()
-		  if (user1) {
-			  const member1 = message.guild.member(user1);
+			if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
+			const user1 = message.mentions.users.first();
+			if (user1) {
+				const member1 = message.guild.member(user1);
 
-			  if (member1) {
-				member1.kick('Optional reason that will display in the audit logs')
-					.then(() => {
-					message.reply(`Successfully kicked ${user.tag}`);
-				}).catch(err => {
-					console.error(err);
-				});
-			 } else {
-				message.reply('❌That user isn\'t in this guild!❌');
-				 }
-				 break;
-			  }
-			  case 'ban':
-					if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('❌YOU DON\'T HAVE ENOUGH PERMISSIONS!❌')
-                                        message.delete(5000);
-					const user2 = message.mentions.users.first()
-					if (user2) {
-						const member2 = message.guild.member(user2);
-						if (member2) {
-							member2.ban({
-								reason: 'They were bad!',
-        }).then(() => {
-			const banembed = new Discord.RichEmbed()
-			.setDescription(`Succesfully bannned ${user.tag}`)
-			.setColor(0x00fa21)
-			message.channel.sendEmbed(banembed);
-		}).catch(err => {
-			const errorbanembed = new Discord.RichEmbed()
-			.setDescription('❌The user cannot be banned due to no permissions or due to mine role is below that members role!❌')
-			.setColor(0xfa0000)
-			message.channel.sendEmbed(errorbanembed);
-			console.error(err);
-		});
-	} else {
-		const notinguildembed = new Discord.RichEmbed()
-		.setDescription('The mentioned user is not in the guild!')
-		.setColor(0xabfa00)
-		message.channel.sendEmbed(notinguildembed);
-	}
-} else {
-	const nomention = new Discord.RichEmbed()
-	.setDescription('❌You didn\'t mention the user to kick/ban!❌')
-	.setColor(0x6c00fa)
-	message.channel.sendEmbed(nomention);
-	break;
-}
-
-
+				if (member1) {
+					member1.kick('Optional reason that will display in the audit logs').then(() => {
+						message.reply(`Successfully kicked ${user1.tag}`);
+					}).catch(err => {
+						const error = new Discord.RichEmbed()
+							.setDescription('The user cannot be kicked due to no permissions or due to mine role is below that members role!')
+							.setColor(0xfa0000)
+						message.channel.sendEmbed(error);
+						console.error(err);
+					});
+				} else {
+					message.reply('That user isn\'t in this guild!');
+				}
+				break;
+			}
+		case 'ban':
+			if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
+			const user = message.mentions.users.first();
+			if (user) {
+				const member = message.guild.member(user);
+				if (member) {
+					member.ban({
+						reason: 'They were bad!',
+					}).then(() => {
+						const banembed = new Discord.RichEmbed()
+							.setDescription(`Succesfully bannned ${user.tag}`)
+							.setColor(0x00fa21)
+						message.channel.sendEmbed(banembed);
+					}).catch(err => {
+						const errorbanembed = new Discord.RichEmbed()
+							.setDescription('The user cannot be banned due to no permissions or due to mine role is below that members role!')
+							.setColor(0xfa0000)
+						message.channel.sendEmbed(errorbanembed);
+						console.error(err);
+					});
+				} else {
+					const notinguildembed = new Discord.RichEmbed()
+						.setDescription('The mentioned user is not in the guild!')
+						.setColor(0xabfa00)
+					message.channel.sendEmbed(notinguildembed);
+				}
+			} else {
+				const nomention = new Discord.RichEmbed()
+					.setDescription('You didn\'t mention the user to ban!')
+					.setColor(0x6c00fa)
+				message.channel.sendEmbed(nomention);
+				message.delete(3000);
+			} break;
 
 case 'meminfo':
 	 const memberembed = new Discord.RichEmbed()
