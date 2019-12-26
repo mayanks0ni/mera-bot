@@ -232,7 +232,7 @@ case 'avatar':
 			   if(message.author.id != "516247416878530560") return message.channel.send("You're not the bot the owner!")
 
     try {
-        await message.channel.send("Bot is shutting down...")
+        message.channel.send("Bot is shutting down...")
         process.exit()
     } catch(e) {
         message.channel.send(`ERROR: ${e.message}`)
