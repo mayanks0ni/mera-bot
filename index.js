@@ -34,7 +34,14 @@ bot.on('message',async message=>{
 	  let args = message.content.substring(PREFIX.length).split(" ");
 
 	  switch(args[0]){
-	  
+	  case 'info':
+               const infoembed = new Discord.RichEmbed()
+                     .setAuthor('Information')
+                     .setDescription('I am Bot Programmed by Spide¥!!')
+                     .setColor("RANDOM")
+                     .setFooter(`IATBot at ${message.createdAt}`)
+               message.channel.sendEmbed(infoembed);
+               break;
 		  
 	  case 'helpdm':
 		  const embed = new Discord.RichEmbed()
