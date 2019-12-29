@@ -38,6 +38,9 @@ bot.on('message',async message=>{
                const infoembed = new Discord.RichEmbed()
                      .setAuthor('Information')
                      .setDescription('I am Bot Programmed by Spide¥!!')
+                     .addField('Name', 'Indian Anime TV')
+                     .addField('Version', '1.0.0')
+                     .addField('Prefix', '+')
                      .setColor("RANDOM")
                      .setFooter(`IATBot at ${message.createdAt}`)
                message.channel.sendEmbed(infoembed);
@@ -141,7 +144,7 @@ bot.on('message',async message=>{
 case 'meminfo':
 	 const memberembed = new Discord.RichEmbed()
 	 .setDescription(`Total Members = ${message.guild.memberCount}`)
-	 .setColor(0x8cf5a8)
+	 .setColor("RANDOM")
 	 message.channel.sendEmbed(memberembed);
 	 break;
 
@@ -150,7 +153,7 @@ case 'avatar':
    const avatarembed = new Discord.RichEmbed()
    .setTitle(`User Avatar For ${user3.tag}`)
    .setImage(`${user3.displayAvatarURL}`)
-   .setColor(0xfccc2b)
+   .setColor("RANDOM")
    message.channel.sendEmbed(avatarembed);
    break;
 
@@ -210,7 +213,7 @@ case 'avatar':
 			const dmmessage = new Discord.RichEmbed()
 		.setDescription(`${dmtext}`)
 		.setFooter(`From IAT Bot at ${message.createdAt}`)
-		.setColor(0x41faa1)
+		.setColor("RANDOM")
 		dmuser.sendEmbed(dmmessage);
 			  break;
 			  
