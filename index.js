@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const randomPuppy = require("random-puppy");
 
 const PREFIX = '+'; 
 
@@ -29,7 +30,7 @@ bot.on('guildMemberRemove', member =>{
 	channel1.send(leaveembed);
 })
 
-bot.on('message', message=>{
+bot.on('message',async message=>{
           if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 	  let args = message.content.substring(PREFIX.length).split(" ");
 
@@ -226,7 +227,22 @@ case 'avatar':
 			const mentionedRole = message.guild.roles.find(r => r.name === rolename);
 			message.channel.send(`${mentionedRole}`);
 		}	} break;
-                          
+     
+                       case 'meme':
+                    
+                          const subReddits = ["dankmeme", "meme", "me_irl"];
+        
+        const random = subReddits[Math.floor(Math.random() * subReddits.length)];
+
+        
+        const img = await randomPuppy(random);
+        const embed = new RichEmbed()
+            .setColor("RANDOM")
+            .setImage(img)
+            .setTitle(`From /r/${random}`)
+            .setURL(`https://reddit.com/r/${random}`);
+
+        message.channel.send(embed);
 }});
 
 
