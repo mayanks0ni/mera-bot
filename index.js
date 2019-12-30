@@ -80,12 +80,6 @@ case 'avatar':
    .setImage(`${user3.displayAvatarURL}`)
    .setColor("RANDOM")
    message.channel.sendEmbed(avatarembed);
-   if(!user3){
-   const userembed = new Discord.RichEmbed ()
-   .setTitle(`User avatar for ${message.author.tag}`)
-   .setImage(`${message.author.displayAvatarURL}`)
-   .setColor("RANDOM")
-   message.channel.sendEmbed(userembed);
    break;
 
 		  case 'del':
