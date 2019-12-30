@@ -1,7 +1,29 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
+const fs = require("fs");
 const PREFIX = '+'; 
+
+bot.commands = new Discord.Collection();
+
+fs.readdir("./commands/", (err, files) => {
+	if (err){
+		console.error(err);
+	}	
+	
+	let jsfiles = files.filter(f => f.split(".").pop() === "js");
+	if(jsfiles.length <= 0){
+		console.log("No files found!!");
+	}
+
+	console.log(`Loaded ${jsfiles.length} commands`);
+
+	jsfiles.forEach((f, i) => {
+		let props = require(`./commands/${f}`);
+		console.log(`${i + 1}: ${f} loaded!`)
+		bot.commands.set(props.help.name, props);
+	});
+
+});
 
 bot.on('ready', () =>{
 	console.log('The bot is online!');
@@ -30,22 +52,15 @@ bot.on('guildMemberRemove', member =>{
 })
 
 bot.on('message',async message=>{
-          if (!message.content.startsWith(PREFIX) || message.author.bot) return;
-	  let args = message.content.substring(PREFIX.length).split(" ");
+          let msgArray = message.content.split(/\s+/g)
+    let command = msgArray[0];
+	let args = message.content.substring(PREFIX.length).split(" ");
+	if (!message.content.startsWith(PREFIX)|| message.author.bot) return;
+	let cmd = bot.commands.get(command.slice(PREFIX.length));
+		if (cmd) cmd.run(bot, message, args);
 
 	  switch(args[0]){
-	  case 'info':
-               const infoembed = new Discord.RichEmbed()
-                     .setAuthor('Information')
-                     .setDescription('I am Bot Programmed by Spide¥!!')
-                     .addField('Name', 'Indian Anime TV')
-                     .addField('Version', '1.0.0')
-                     .addField('Prefix', '+')
-                     .setColor("RANDOM")
-                     .setFooter(`IATBot at ${message.createdAt}`)
-               message.channel.sendEmbed(infoembed);
-               break;
-		  
+	  
 	  case 'helpdm':
 		  const embed = new Discord.RichEmbed()
 		  .setTitle('Basic help commands!')
