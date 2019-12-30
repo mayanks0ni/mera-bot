@@ -63,7 +63,8 @@ bot.on('message',async message=>{
 		  message.author.sendEmbed(embed);
                   message.react('☑️');
                   const helpdm = new Discord.RichEmbed()
-                  .setDescription('Check Your DM!')
+                  .setAuthor('Check Your DM!')
+                  .setColor("RANDOM")
                   message.channel.sendEmbed(helpdm);
 		  break;
 			  
