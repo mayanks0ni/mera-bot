@@ -52,82 +52,14 @@ bot.on('guildMemberRemove', member =>{
 })
 
 bot.on('message',async message=>{
-          let msgArray = message.content.split(/\s+/g)
-    let command = msgArray[0];
+        let msgArray = message.content.split(/\s+/g)
+        let command = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
 	if (!message.content.startsWith(PREFIX)|| message.author.bot) return;
 	let cmd = bot.commands.get(command.slice(PREFIX.length));
 		if (cmd) cmd.run(bot, message, args);
 
-	  switch(args[0]){
-	  
-	  
-			  
-	  
-		
-
-case 'meminfo':
-	 const memberembed = new Discord.RichEmbed()
-	 .setDescription(`Total Members = ${message.guild.memberCount}`)
-	 .setColor("RANDOM")
-	 message.channel.sendEmbed(memberembed);
-	 break;
-
-case 'avatar':
-	const user3 = message.mentions.users.first();
-   const avatarembed = new Discord.RichEmbed()
-   .setTitle(`User Avatar For ${user3.tag}`)
-   .setImage(`${user3.displayAvatarURL}`)
-   .setColor("RANDOM")
-   message.channel.sendEmbed(avatarembed);
-   break;
-
-		  case 'del':
-			  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('YOU DON\'T HAVE ENOUGH PERMISSIONS!')
-       message.delete()
-	message.channel.bulkDelete(args[1]);
-        break;
-                  
-	          case 'suggest':
-			message.delete()
-			let suggestion;
-			  suggestion = args.slice(1).join(" ");
-			  const suggested = new Discord.RichEmbed()
-			  .setTitle('Suggestion')
-			  .setDescription(`${suggestion}`)
-			  .setColor(0xccff80)
-			  .setFooter(`Suggestion by ${message.author.tag} at ${message.createdAt}`)
-			  bot.channels.get("629716423656079380").send(suggested)
-			  .then(function (message) {
-				message.react("👍")
-				.then(() => message.react('👎'))})
-                                break;
-	    
-			  
-            
-        
-			  
-			  case 'mentionrole':
-			message.delete()
-			if(!message.member.hasPermission("MANAGE_MESSAGES")) {
-				const nomrperms = new Discord.RichEmbed()
-				.setDescription('**YOU DON\'T HAVE ENOUGH PERMISSIONS!!**')
-				.setColor(0xff0000)
-				message.channel.sendEmbed(nomrperms);
-			}else{
-			let rolename;
-			rolename = args.slice(1).join(" ")
-			if(!rolename){
-				const nomenrole = new Discord.RichEmbed()
-				.setDescription('**You didn\'t wrote the roles name!**')
-				.setColor(0xcdacfc)
-				message.channel.sendEmbed(nomenrole);
-			} else{
-			const mentionedRole = message.guild.roles.find(r => r.name === rolename);
-			message.channel.send(`${mentionedRole}`);
-		}	} break;
-     
-}});
+	});
 
 
 bot.login(process.env.BOT_TOKEN);
