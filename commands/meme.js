@@ -1,5 +1,5 @@
 const Discord = module.require("discord.js");
-
+const randomPuppy = require("random-puppy");
 
 module.exports.run = async (bot, message, args) => {
     const subReddits = ["dankmeme", "meme", "me_irl"];
