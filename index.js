@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
-const randomPuppy = require("random-puppy");
+
 const PREFIX = '+'; 
 
 bot.commands = new Discord.Collection();
