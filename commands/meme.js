@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 			"AdviceAnimals"
 		       ];
 
-			const random = subReddits[Math.floor(Math.random() * subReddits.length) - 1];
+			const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 
 
 			const img = await randomPuppy(random);
