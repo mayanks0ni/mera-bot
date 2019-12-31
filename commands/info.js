@@ -2,7 +2,12 @@ const Discord = module.require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     const Infoembed = new Discord.RichEmbed()
-				.setDescription('I am a bot programmed by SpideY!')
+		.addField('Name', 'Indian Anime TV')
+                .addField('Prefix', '+')
+                .addField('Version', '1.0.0')
+                .addField('Owner', '**Spide¥#6125**')
+                .setColor("RANDOM")		
+                .setDescription('I am a bot programmed by SpideY!')
 			message.channel.sendEmbed(Infoembed);
 };
 
