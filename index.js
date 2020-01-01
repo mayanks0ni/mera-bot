@@ -78,8 +78,17 @@ bot.on('message',async message=>{
 		.setDescription(`GG ${message.author.username} you just advanced to level ${curlevel + 1}!!`)
 		.setColor("GOLD")	
 		.setFooter('IAT Bot')	
-		levelupchannel.sendEmbed(levelup);
-	
+		message.channel.sendEmbed(levelup).then(message => {message.delete(5000)});
+	if(!message.guild.id = "566629935213576206"){
+		return;
+	}else{
+		let levelup1 = new Discord.RichEmbed()
+		.setAuthor(`${message.author.tag} advanced a level!`)
+		.setDescription(`GG ${message.author.username} you just advanced to level ${curlevel + 1}!!`)
+		.setColor("GOLD")	
+		.setFooter('IAT Bot')
+		levelupchannel.sendEmbed(levelup1);
+	}
 
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) =>{
 	if(err) console.log(err)
