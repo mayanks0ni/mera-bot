@@ -53,7 +53,8 @@ bot.on('guildMemberRemove', member =>{
 })
 
 bot.on('message',async message=>{
-	
+	if(!message.guild.id === "566629935213576206") { 
+		return;}else{
 	let xpAdd = Math.floor(Math.random() * 6) + 7;
 
 		console.log(xpAdd);
@@ -84,7 +85,7 @@ bot.on('message',async message=>{
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) =>{
 	if(err) console.log(err)
 });
-	
+		}
         let msgArray = message.content.split(/\s+/g)
         let command = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
