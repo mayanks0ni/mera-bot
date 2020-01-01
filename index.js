@@ -28,7 +28,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on('ready', () =>{
 	console.log('The bot is online!');
-	bot.user.setActivity('Happy New Year🎉🎉', {type:"PLAYING"});
+	bot.user.setActivity('+HELP', {type:"LISTENING"});
 });
 
 bot.on('guildMemberAdd', member =>{
