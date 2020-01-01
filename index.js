@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
-
+let xp = require("./xp.json");
 const PREFIX = '+'; 
 
 bot.commands = new Discord.Collection();
@@ -53,6 +53,38 @@ bot.on('guildMemberRemove', member =>{
 })
 
 bot.on('message',async message=>{
+	
+	let xpAdd = Math.floor(Math.random() * 6) + 7;
+
+		console.log(xpAdd);
+	const levelupchannel = message.guild.channels.find(channel => channel.name === "〢iat-bot-levelups");	
+		if(!xp[message.author.id]){
+			xp[message.author.id] = {
+				xp: 0,
+				level: 1
+			};
+		}
+		
+	let curxp = xp[message.author.id].xp;
+	let curlevel = xp[message.author.id].level; 
+	let nl = xp[message.author.id].level * 500;
+	
+    xp[message.author.id].xp = curxp + xpAdd;
+	if(nl <= xp[message.author.id].xp){
+		xp[message.author.id].level = curlevel + 1;
+
+		let levelup = new Discord.RichEmbed()
+		.setAuthor(`${message.author.tag} advanced a level!`)
+		.setDescription(`GG ${message.author.username} you just advanced to level ${curlevel + 1}!!`)
+		.setColor("GOLD")	
+		.setFooter('IAT Bot')	
+		levelupchannel.sendEmbed(levelup);
+	}
+
+fs.writeFile("./xp.json", JSON.stringify(xp), (err) =>{
+	if(err) console.log(err)
+});
+	
         let msgArray = message.content.split(/\s+/g)
         let command = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
