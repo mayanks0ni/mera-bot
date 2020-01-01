@@ -79,7 +79,7 @@ bot.on('message',async message=>{
 		.setColor("GOLD")	
 		.setFooter('IAT Bot')	
 		message.channel.sendEmbed(levelup).then(message => {message.delete(5000)});
-	if(!message.guild.id = "566629935213576206"){
+	if(message.guild.id != "566629935213576206"){
 		return;
 	}else{
 		let levelup1 = new Discord.RichEmbed()
