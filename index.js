@@ -53,8 +53,7 @@ bot.on('guildMemberRemove', member =>{
 })
 
 bot.on('message',async message=>{
-	if(!message.guild.id === "566629935213576206") { 
-		return;}else{
+	
 	let xpAdd = Math.floor(Math.random() * 6) + 7;
 
 		console.log(xpAdd);
@@ -80,7 +79,7 @@ bot.on('message',async message=>{
 		.setColor("GOLD")	
 		.setFooter('IAT Bot')	
 		levelupchannel.sendEmbed(levelup);
-	}
+	
 
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) =>{
 	if(err) console.log(err)
