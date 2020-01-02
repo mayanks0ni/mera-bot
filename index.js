@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
-let xp = require("./xp.json");
+let xp = require('./xp.json');
 const PREFIX = '+'; 
 
 bot.commands = new Discord.Collection();
