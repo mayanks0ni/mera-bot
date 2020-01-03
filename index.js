@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
-let xp = require('./xp.json');
+let xp = require("./xp.json");
 const PREFIX = '+'; 
 
 bot.commands = new Discord.Collection();
@@ -90,7 +90,7 @@ bot.on('message',async message=>{
 		levelupchannel.sendEmbed(levelup1);
 	}
 
-fs.writeFile("./xp.json", JSON.stringify(xp), (err) =>{
+fs.writeFile('./xp.json', JSON.stringify(xp), (err) =>{
 	if(err) console.log(err)
 });
 		}
