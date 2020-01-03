@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 			const memeembed = new Discord.RichEmbed()
 				.setColor("RANDOM")
 				.setImage(img)
-				.setTitle('Here's a Hentai Image!')
+				.setTitle('Here\'s a Hentai Image!')
 			
 
 			message.channel.sendEmbed(memeembed);
