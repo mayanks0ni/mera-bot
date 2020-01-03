@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 			const memeembed = new Discord.RichEmbed()
 				.setColor("RANDOM")
 				.setImage(img)
-				.setTitle('Here's a Boob's Image!')
+				.setTitle('Here\'s a Boob's Image!')
 			
 
 			message.channel.sendEmbed(memeembed);
