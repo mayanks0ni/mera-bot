@@ -7,7 +7,7 @@ if (!isBotOwner)
 
       message.channel.send('Restarting...').then(m => {
         bot.destroy().then(() => {
-          bot.login('NjM2OTgyODc2Mjg5ODkyMzUy.XhBJ4A.AHrXaVSxi5zFoCEtt8FFpXBzQJw');
+          bot.login(process.env.BOT_TOKEN);
         });
       });
 };
