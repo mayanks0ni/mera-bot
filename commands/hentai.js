@@ -1,5 +1,5 @@
 const Discord = module.require("discord.js");
-
+const superagent = require('superagent')
 module.exports.run = async (bot, message, args) => {
       if (msg.channel.nsfw === true) {
     superagent.get('https://nekobot.xyz/api/image')
