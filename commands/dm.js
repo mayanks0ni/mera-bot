@@ -9,7 +9,8 @@ module.exports.run = async (bot, message, args) => {
 			if(!dmuser) return;
 			const dmmessage = new Discord.RichEmbed()
 		.setDescription(`${dmtext}`)
-		.setFooter(`From IAT Bot at ${message.createdAt}`)
+		.setFooter('From IAT Bot')
+                .setTimestamp()
 		.setColor("RANDOM")
 		dmuser.sendEmbed(dmmessage);
 			
