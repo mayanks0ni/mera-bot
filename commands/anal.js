@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     superagent.get('https://nekos.life/api/v2/img/anal')
    
       message.channel.send({ file: response.body.url });
-    });
+   
   } else {
     message.channel.send("This isn't NSFW channel!")
   }
