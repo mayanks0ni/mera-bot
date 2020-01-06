@@ -5,10 +5,21 @@ module.exports.run = async (bot, message, args) => {
     superagent.get('https://nekobot.xyz/api/image')
     .query({ type: 'pussy'})
     .end((err, response) => {
-      message.channel.send({ file: response.body.message });
+      const pussy = new Discord.RichEmbed()
+   .setAuthor(`Pussy Images for ${message.author.username}!`)
+   .setImage(response.body.message)
+  .setTimestamp()
+.setColor("RANDOM")
+  .setFooter('IAT Bot')
+      message.channel.sendEmbed(pussy);
     });
   } else {
-    message.channel.send("This isn't NSFW channel!")
+    const notnsfw = new Discord.RichEmbed()
+    .setTitle('This channel is not a nsfw channel!!')
+    .setColor(0xfa0202)
+    .setTimestamp()
+    .setFooter('IAT Bot')
+    message.channel.sendEmbed(notnsfw);
   }
 };
 
