@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     .end((err, response) => {
       const pussy = new Discord.RichEmbed()
    .setAuthor(`Pussy Images for ${message.author.username}!`)
-   .setImage(response.body.message)
+   .setImage('https://nekos.life/api/v2/img/anal')
   .setTimestamp()
 .setColor("RANDOM")
   .setFooter('IAT Bot')
