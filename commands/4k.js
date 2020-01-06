@@ -5,13 +5,13 @@ module.exports.run = async (bot, message, args) => {
     superagent.get('https://nekobot.xyz/api/image')
     .query({ type: '4k'})
     .end((err, response) => {
-      const 4k = new Discord.RichEmbed()
+      const fourk = new Discord.RichEmbed()
    .setAuthor(`4k Images for ${message.author.username}!`)
    .setImage(response.body.message)
   .setTimestamp()
 .setColor("RANDOM")
   .setFooter('IAT Bot')
-      message.channel.sendEmbed(4k);
+      message.channel.sendEmbed(fourk);
     });
   } else {
     const notnsfw = new Discord.RichEmbed()
