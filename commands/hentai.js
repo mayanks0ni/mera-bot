@@ -9,6 +9,7 @@ module.exports.run = async (bot, message, args) => {
    .setAuthor(`Hentai Images for ${message.author.username}!`)
    .setImage(response.body.message)
   .setTimestamp()
+  .setColor("RANDOM")
   .setFooter('IAT Bot')
       message.channel.sendEmbed(hentai);
     });
@@ -17,6 +18,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle('This channel is not a nsfw channel!!')
     .setTimestamp()
     .setFooter('IAT Bot')
+    .setColor(0xfa0202)
     message.channel.sendEmbed(notnsfw);
   }
 };
