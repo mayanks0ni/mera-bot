@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
       message.channel.sendEmbed(hentai);
     });
   } else {
-    const notnsfw = new Discord.RichEmbed
+    const notnsfw = new Discord.RichEmbed()
     .setTitle('This channel is not a nsfw channel!!')
     .setTimestamp()
     .setFooter('IAT Bot')
