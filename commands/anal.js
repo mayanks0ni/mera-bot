@@ -5,7 +5,11 @@ module.exports.run = async (bot, message, args) => {
     let body = await superagent
     .get('https://nekos.life/api/v2/img/anal')
       
-      message.channel.send({ file: body.url });
+     const analembed = new Discord.RichEmbed()
+    .setImage(body.url)
+    .setTimestamp()
+    .setTitle(`Anal Image for ${message.author.username}`)
+    message.channel.sendEmbed(analembed);
    
   } else {
     message.channel.send("This isn't NSFW channel!")
