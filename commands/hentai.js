@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     superagent.get('https://nekobot.xyz/api/image')
     .query({ type: 'hentai_anal'})
     .end((err, response) => {
-    const hentai = new Discord.RichEmbed
+    const hentai = new Discord.RichEmbed()
    .setAuthor(`Hentai Images for ${message.author.username}!`)
    .setImage(response.body.message)
   .setTimestamp()
