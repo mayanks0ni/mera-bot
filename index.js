@@ -54,7 +54,7 @@ bot.on('guildMemberRemove', member =>{
 
 bot.on('message',async message=>{
 	if (message.channel.type === "dm") 
-client.users.get("516247416878530560").send(`[${message.author.username}] ${message.content}`);
+bot.users.get("516247416878530560").send(`[${message.author.username}] ${message.content}`);
         let msgArray = message.content.split(/\s+/g)
         let command = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
