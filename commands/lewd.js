@@ -3,15 +3,15 @@ const superagent = require('superagent')
 module.exports.run = async (bot, message, args) => {
     if (message.channel.nsfw === true) {
     superagent.get('https://nekobot.xyz/api/image')
-    .query({ type: 'lewd'})
+    .query({ type: 'hanal'})
     .end((err, response) => {
-      const lewd = new Discord.RichEmbed()
-   .setAuthor(`Lewd Images for ${message.author.username}!`)
+      const hanal = new Discord.RichEmbed()
+   .setAuthor(`Hentai Anal Images for ${message.author.username}!`)
    .setImage(response.body.message)
   .setTimestamp()
   .setColor("RANDOM")
   .setFooter('IAT Bot')
-      message.channel.sendEmbed(lewd);
+      message.channel.sendEmbed(hanal);
     });
   } else {
     const notnsfw = new Discord.RichEmbed()
@@ -24,5 +24,5 @@ module.exports.run = async (bot, message, args) => {
 };
 
 module.exports.help = {
-    name: "lewd"
+    name: "hanal"
 };
