@@ -5,13 +5,13 @@ module.exports.run = async (bot, message, args) => {
     superagent.get('https://nekobot.xyz/api/image')
     .query({ type: 'anal'})
     .end((err, response) => {
-      const ass = new Discord.RichEmbed()
-   .setAuthor(`Ass Images for ${message.author.username}!`)
+      const anal = new Discord.RichEmbed()
+   .setAuthor(`Anal Images for ${message.author.username}!`)
    .setImage(response.body.message)
   .setTimestamp()
   .setColor("RANDOM")
   .setFooter('IAT Bot')
-      message.channel.sendEmbed(ass);
+      message.channel.sendEmbed(anal);
     });
   } else {
     const notnsfw = new Discord.RichEmbed()
