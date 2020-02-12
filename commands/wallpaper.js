@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 		.get(`https://nekos.life/api/v2/img/wallpaper`);
 
 		let wlembed = new Discord.RichEmbed()
-                .srtTitle(`Wallpaper For ${message.author.username}`)
+                .setTitle(`Wallpaper For ${message.author.username}`)
 		.setColor("RANDOM")
 		.setImage(body.url)
 		.setTimestamp()
