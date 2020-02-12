@@ -7,6 +7,7 @@ const notnsfw = new Discord.RichEmbed()
 .setTitle('**This is not a NSFW Channel!**')
 .setFooter('IAT Bot')
 .setTimestamp()
+.setColor(0xff0000)
 message.channel.send(notnsfw);
 }else{
 
