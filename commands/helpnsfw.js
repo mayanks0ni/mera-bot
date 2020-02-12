@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('hass', 'Command to view Hentai Ass Images!')
         .addField('anal', 'Command to view Anal Images!')
         .addField('hanal', 'Command to view Hentai Anal Images!')
+        .addField('boobs', 'Command to view Boobs Images!')
 	.setColor("GOLD")
         .setTimestamp()		
 message.channel.sendEmbed(nsfwembed);
