@@ -15,6 +15,7 @@ module.exports.run = async (bot, message, args) => {
                   .addField('kiss [user]', 'Kisses the mentioned user!')
                   .addField('pat [user]', 'Pats the mentioned user!')
                   .addField('fact', 'Sends a random fact!')
+                  .addField('wallpaper', 'Command to get a random wallpaper!')
                   .addField('dm [user]', 'Directly send the mentioned user message through the bot!')
 		  .addField('mentionrole [rolename]', 'Mentions the role by specifying only its name!')
       .setColor(0xff47bf)
