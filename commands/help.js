@@ -11,7 +11,11 @@ module.exports.run = async (bot, message, args) => {
 		  .addField('say [text]', 'A command to send messages through the bot!')
 		  .addField('announce [channel] [text]', 'A command to announce messages!')
 		  .addField('suggest [suggestion]', 'A command to give suggestions!')
-      .addField('dm [user]', 'Directly send the mentioned user message through the bot!')
+                  .addField('hug [user]', 'Hugs the mentioned user!')
+                  .addField('kiss [user]', 'Kisses the mentioned user!')
+                  .addField('pat [user]', 'Pats the mentioned user!')
+                  .addField('fact', 'Sends a random fact!')
+                  .addField('dm [user]', 'Directly send the mentioned user message through the bot!')
 		  .addField('mentionrole [rolename]', 'Mentions the role by specifying only its name!')
       .setColor(0xff47bf)
        message.channel.sendEmbed(embed1);
