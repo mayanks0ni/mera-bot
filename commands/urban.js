@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
                     if(!res) return message.channel.send("No results found for this topic, sorry!");
                     let { word, definition, example, thumbs_up, thumbs_down, permalink, author} = res;
 
-                        let embed = new RichEmbed()
+                        let embed = new Discord.RichEmbed()
                             .setColor(cyan)
                             .setAuthor(`Urban Dictionary | ${word}`, image)
                             .setThumbnail(image)
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
                 })
             } catch(e) {
                 console.log(e)
-                return message.channel.send("looks like i've broken! Try again")
+                return message.channel.send("Looks like there's a problem! Try again")
             }
 
 
