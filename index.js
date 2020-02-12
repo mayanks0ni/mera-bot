@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
 const SQLite = require("sqlite");
-const sql = new SQLite('./scores.sqlite');
+
 
 const PREFIX = '+'; 
 
