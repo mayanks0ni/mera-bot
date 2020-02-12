@@ -15,6 +15,7 @@
     "fs": "0.0.1-security",
     "random-puppy": "^1.1.0",
     "superagent": "^3.8.3",
-    "urban": "^0.3.1"
+    "urban": "^0.3.1",
+    "sqlite": "^2.9.1"
   }
 }
