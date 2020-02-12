@@ -2,32 +2,22 @@ const Discord = require("discord.js");
 const urban = require("urban");
 
 module.exports.run = async (bot, message, args) => {
-    if(!args[0] || !["search", "random"].includes(args[0])) return message.channel.send("`-urban <search|random> (query)`");
-        let image = "http://cdn.marketplaceimages.windowsphone.com/v8/images/5c942bfe-6c90-45b0-8cd7-1f2129c6e319?imageType=ws_icon_medium";
-        let search = args[1] ? urban(args.slice(1).join(" ")) : urban.random();
-            try {
-                search.first(res => {
-                    if(!res) return message.channel.send("No results found for this topic, sorry!");
-                    let { word, definition, example, thumbs_up, thumbs_down, permalink, author} = res;
+    if(args.length < 1) return message.reply("Please enter something!");
+    let XD = args[1]
 
-                        let embed = new Discord.RichEmbed()
-                            .setColor(cyan)
-                            .setAuthor(`Urban Dictionary | ${word}`, image)
-                            .setThumbnail(image)
-                            .setDescription(stripIndents`**Defintion:** ${definition || "No definition"}
-                            **Example:** ${example || "No Example"}
-                            **Upvote:** ${thumbs_up || 0}
-                            **Downvote:** ${thumbs_down || 0}
-                            **Link:** [link to ${word}](${permalink || "https://www.urbandictionary.com/"})`)
-                            .setTimestamp()
-                            .setFooter(`Written by ${author || "unknown"}`);
+    urban(XD).first(json => {
+        if(!json) return message.reply("No results found!")
 
-                            message.channel.send(embed)
-                })
-            } catch(e) {
-                console.log(e)
-                return message.channel.send("Looks like there's a problem! Try again")
-            }
+        let urbEmbed = new Discord.RichEmbed()
+        .setColor("00ff00")
+        .setTitle(json.word)
+        .setDescription(json.definition)
+        .addField("Upvotes", json.thumbs_up, true)
+        .addField("Downvotes", json.thumbs_down, true)
+        .setFooter(`Written by: ${json.author}`);
+
+        message.channel.send(urbEmbed)
+    });
 
 
 }
