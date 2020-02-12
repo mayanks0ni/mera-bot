@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 		.setTitle('Random Fact!')
 		.setDescription(body.fact)
 		.setTimestamp()
-		.setFooter('IAT Bot', `${message.author.displayAvatarURL}`)
+		.setFooter('IAT Bot')
 		message.channel.send(factembed);
 };
 
