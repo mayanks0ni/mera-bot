@@ -8,6 +8,7 @@ module.exports.run = async (bot, message, args) => {
 		 .setTitle('Please mention someone to kiss!')
 		 .setFooter('IAT Bot')
 		 .setTimestamp()
+		 .setColor(0xff0000)
 		 message.channel.send(nomen1)
 	 }else{
 	 
