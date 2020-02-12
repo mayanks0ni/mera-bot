@@ -1,3 +1,7 @@
+const Discord = module.require("discord.js");
+const superagent = require("superagent");
+
+module.exports.run = async (bot, message, args) => {
 let men2 = message.mentions.users.first();
 	 if(!men2){
 		 const nomen1 = new Discord.RichEmbed()
@@ -20,3 +24,8 @@ let men2 = message.mentions.users.first();
 		.setFooter('IAT Bot')
 		message.channel.send(patembed);
 	 } 
+};
+
+module.exports.help = {
+    name: "pat"
+};
