@@ -5,7 +5,7 @@ let week = 0;
 
 module.exports.run = async (bot, message, args) => {
     let uptime = ``;
-    let totalSeconds = (client.uptime / 1000);
+    let totalSeconds = (bot.uptime / 1000);
     let hours = Math.floor(totalSeconds / 3600);
     totalSeconds %= 3600;
     let minutes = Math.floor(totalSeconds / 60);
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
 
     let uptimeembed = new Discord.RichEmbed()
         .setColor("GOLD")
-        .addField('Uptime', uptime);
+        .addField('Uptime - ', uptime);
 
     message.channel.send(uptimeembed);
 };
