@@ -3,7 +3,7 @@ const Discord = module.require("discord.js");
 module.exports.run = async (bot, message, args) => {
 if (!message.member.hasPermission("KICK_MEMBERS")) {
  const noperms = new Discord.RichEmbed()
-.setTitle('You Don't Have Enough Permissions!')
+.setTitle('You Don\'t Have Enough Permissions!')
 .setFooter('IAT Bot')
 .setTimestamp()
 
