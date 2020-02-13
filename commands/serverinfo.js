@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
     function checkOnlineUsers(guild) {
         let onlineCount = 0;
         guild.members.forEach(member => {
-            if(member.user.presence.status === "online", "idle", "dnd")
+            if(member.user.presence.status === "online")
                 onlineCount++; 
         });
         return onlineCount;
