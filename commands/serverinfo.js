@@ -39,8 +39,8 @@ module.exports.run = async (bot, message, args) => {
         .addField('Total member count', message.guild.memberCount)
         .addField('Humans', checkMembers(message.guild), true)
         .addField('Bots', checkBots(message.guild), true)
-        .addField('Online', checkOnlineUsers(message.guild))
-        .setFooter('Guild created at:')
+        .addField('Online Users', checkOnlineUsers(message.guild))
+        .setFooter('Server created at - ')
         .setTimestamp(message.guild.createdAt);
 
     return message.channel.send(serverembed);
