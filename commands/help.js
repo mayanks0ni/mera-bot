@@ -63,13 +63,13 @@ module.exports.run = async (bot, message, args) => {
                 .setTimestamp()
     const helpmsg = await message.channel.send(helpemb);
     await helpmsg.react(`👤`);
-    await helpmsg.react(`👤`);
+    await helpmsg.react(`🛠️`);
     await helpmsg.react(`⚙️`);
     await helpmsg.react(`🖲️`);
     await helpmsg.react(`🔞`);
 
     const filter = (reaction, user) => {
-        return ['👤', '👤', '⚙️', '🖲️', '🔞'].includes(reaction.emoji.name) && user.id === message.author.id;
+        return ['👤', '🛠️', '⚙️', '🖲️', '🔞'].includes(reaction.emoji.name) && user.id === message.author.id;
     };
     helpmsg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	.then(collected => {
@@ -79,7 +79,7 @@ module.exports.run = async (bot, message, args) => {
             helpmsg.edit(userhelpcmd);
             helpmsg.clearReactions();
         }
-        if (reaction.emoji.name === '👤') {
+        if (reaction.emoji.name === '🛠️') {
             helpmsg.edit(moderationcmd);
             helpmsg.clearReactions();
         }
