@@ -3,11 +3,11 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
     let {body} = await superagent
-		.get(`https://evilinsult.com/generate_insult.php?lang=en&type`);
-
+		.get(`https://evilinsult.com/generate_insult.php?lang=en&type=json`);
+                let insultuser = message.mentions.users.first();
 		let insultembed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-		.setTitle('Get Insulted!')
+		.setTitle(`Fuck You {insultuser.username}!`)
 		.setDescription(body.insult)
 		.setTimestamp()
 		.setFooter('IAT Bot')
