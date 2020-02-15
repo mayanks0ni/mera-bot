@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
                 let insultuser = message.mentions.users.first();
 		let insultembed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-		.setTitle(`Fuck You {insultuser.username}!`)
+		.setTitle(`Fuck You ${insultuser.username}!`)
 		.setDescription(body.insult)
 		.setTimestamp()
 		.setFooter('IAT Bot')
