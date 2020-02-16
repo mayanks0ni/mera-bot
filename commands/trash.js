@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
 		let awooifyembed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-		.setTitle(`Awooify ${message.author.username}`)
+		.setTitle(`Trash ${message.author.username}!`)
 		.setImage(body.message)
 		.setTimestamp()
 		.setFooter('IAT Bot')
