@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
 		let ttembed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-		.setTitle('Trump Tweet LMAO:GWcorbinTopKek:!')
+		.setTitle('Trump Tweet LMAO!')
 		.setImage(body.message)
 		.setTimestamp()
 		.setFooter('IAT Bot')
