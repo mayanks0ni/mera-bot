@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 		.setImage(body.message)
 		.setTimestamp()
 		.setFooter('IAT Bot')
-		message.channel.send(trashembed);
+		message.channel.send(trashembed); 
 };
 
 module.exports.help = {
