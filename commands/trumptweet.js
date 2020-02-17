@@ -3,6 +3,14 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
     let text1 = args.slice(1).join(" ");
+	if(!text1){
+		const notext = new Discord.RichEmbed()
+		.setTitle('Please Provide Text To Tweet!')
+		.setFooter('IAT Bot')
+		.setColor(0xff0000)
+		.setTimestamp()
+		message.channel.send(notext);
+	}else{
    
    let {body} = await superagent
 		.get(`https://nekobot.xyz/api/imagegen?type=trumptweet&&text=${text1}`);
@@ -13,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
 		.setImage(body.message)
 		.setTimestamp()
 		.setFooter('IAT Bot')
-		message.channel.send(ttembed);
+		message.channel.send(ttembed);}
 };
 
 module.exports.help = {
