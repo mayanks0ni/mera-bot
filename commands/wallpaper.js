@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 		let wlembed = new Discord.RichEmbed()
                 .setTitle(`Wallpaper For ${message.author.username}`)
 		.setColor("RANDOM")
-		.setImage(body.response)
+		.setImage(body.url)
 		.setTimestamp()
 		.setFooter('IAT Bot')
 		message.channel.send(wlembed);
