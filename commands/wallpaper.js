@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 	 
 
 		let {body} = await superagent
-		.get(`https://nekos.life/api/v2/img/wallpaper`);
+		.get(`https://source.unsplash.com/1600x900/?beach`);
 
 		let wlembed = new Discord.RichEmbed()
                 .setTitle(`Wallpaper For ${message.author.username}`)
