@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle('Users with the go4 role:')
             .setDescription(message.guild.roles.find(r=>r.name === role1).members.map(m=>m.user.tag).join('\n'))
             .setFooter('IAT Bot')
+            .setColor("RANDOM")
             .setTimestamp()
 message.channel.send(inroleEmbed);
 };
