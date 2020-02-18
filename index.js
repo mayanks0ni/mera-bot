@@ -52,19 +52,20 @@ bot.on('guildMemberRemove', member =>{
 })
 
 bot.on('message',async message=>{
-	if(message.channel.id != "582850962121687045")return;
+	if(message.channel.id != "582850962121687045"){
+return;}
 	let menrole = message.guild.roles.find(r=> r.name === "Anime Squad"
 	)
 	if(message.content.startsWith("Hey")){
        message.channel.send(`${menrole}`);
-	}
+	}else{
         let msgArray = message.content.split(/\s+/g)
         let command = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
 	if (!message.content.startsWith(PREFIX)|| message.author.bot) return;
         if(message.channel.type === "dm") return; 
 	let cmd = bot.commands.get(command.slice(PREFIX.length));
-		if (cmd) cmd.run(bot, message, args);
+		if (cmd) cmd.run(bot, message, args);}
 
 	});
 
