@@ -52,6 +52,12 @@ bot.on('guildMemberRemove', member =>{
 })
 
 bot.on('message',async message=>{
+	if(message.channel.id != "582850962121687045")return;
+	let menrole = message.guild.roles.find(r=> r.name === "Anime Squad"
+	)
+	if(message.content.startsWith("Hey")){
+       message.channel.send(`${menrole}`);
+	}
         let msgArray = message.content.split(/\s+/g)
         let command = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
