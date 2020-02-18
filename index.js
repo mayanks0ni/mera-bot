@@ -58,7 +58,7 @@ bot.on('message',async message=>{
 	)
 	if(message.content.startsWith("Hey")){
        message.channel.send(`${menrole}`);
-	}else{
+	}}else{
         let msgArray = message.content.split(/\s+/g)
         let command = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
