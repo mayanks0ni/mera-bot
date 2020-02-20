@@ -71,7 +71,7 @@ bot.on('guildMemberAdd', async member =>{
 	  .setColor("GOLD")
 	  .attachFiles([attachment])
 	  .setImage('attachment://attachment')
-          channel1.send(joinembed); 
+          channel.send(joinembed); 
 })
 
 bot.on('guildMemberRemove', member =>{
