@@ -31,7 +31,7 @@ bot.on('ready', () =>{
 	bot.user.setActivity('+help', {type:"LISTENING"});
 });
 
-bot.on('guildMemberAdd', member =>{
+bot.on('guildMemberAdd', async member =>{
 	const channel = member.guild.channels.find(channel => channel.name === "〢join-leave");
 	if(!channel) return;
 	const canvas = Canvas.createCanvas(700, 250);
