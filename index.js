@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
+const Canvas = require("canvas");
 const PREFIX = '+'; 
 
 bot.commands = new Discord.Collection();
@@ -33,13 +34,44 @@ bot.on('ready', () =>{
 bot.on('guildMemberAdd', member =>{
 	const channel = member.guild.channels.find(channel => channel.name === "〢join-leave");
 	if(!channel) return;
-	const joinembed = new Discord.RichEmbed()
-	        .setTitle('Welcome To Indian Anime TV\'s Server!')
-		.setDescription(`Welcome to our server ${member}! Hope you enjoy your stay here!`)
-		.setImage('https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
-		.setFooter('By IAT Bot!')
-		.setColor(0x3dffcf)
-	channel.send(joinembed);
+	const canvas = Canvas.createCanvas(700, 250);
+	const ctx = canvas.getContext('2d');
+
+
+	const background = await Canvas.loadImage('https://cdn.discordapp.com/attachments/645692503902781480/680017295019737118/UyWNCe.jpg');
+
+	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+	ctx.strokeStyle = '#74037b';
+	ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+
+	ctx.font = '28px Segoe Print';
+	ctx.fillStyle = '#ffffff';
+	ctx.fillText('Welcome To The Server,', canvas.width / 2.5, canvas.height / 3.5);
+
+
+	
+	ctx.fillStyle = '#ffffff';
+	ctx.fillText(`${member.displayName}!`, canvas.width / 2.5, canvas.height / 1.8);
+
+	ctx.beginPath();
+	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+	ctx.closePath();
+	ctx.clip();
+
+	const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
+	ctx.drawImage(avatar, 25, 25, 200, 200);
+
+	const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
+         const joinembed = new Discord.RichEmbed()
+	  .setTitle(`Welcome To The Server ${member.displayName}`)
+	  .setFooter('IAT Bot')
+	  .setTimestamp()
+	  .setColor("GOLD")
+	  .attachFiles([attachment])
+	  .setImage('attachment://attachment')
+          channel1.send(joinembed); 
 })
 
 bot.on('guildMemberRemove', member =>{
