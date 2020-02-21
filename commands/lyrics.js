@@ -24,12 +24,8 @@ module.exports.run = async (bot, message, args) => {
    let {body} = await superagent
 		.get(`https://api.lyrics.ovh/v1/${uname}/${text}`);
 
-		let lyricsembed = new Discord.RichEmbed()
-		.setColor("RANDOM")
-		.setDescription(body.lyrics)
-		.setTimestamp()
-		.setFooter('IAT Bot')
-		message.channel.send(lyricsembed);}
+
+		message.channel.send(body.lyrics);}
 };
 
 module.exports.help = {
