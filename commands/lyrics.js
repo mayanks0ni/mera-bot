@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
 
 		let lyricsembed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-		.setImage(body.lyrics)
+		.setDescription(body.lyrics)
 		.setTimestamp()
 		.setFooter('IAT Bot')
 		message.channel.send(lyricsembed);}
