@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
 		.get(`https://api.lyrics.ovh/v1/${uname}/${text}`);
 
 
-		message.channel.send(body.lyrics);}
+		message.channel.send(body.lyrics, { split: true });}
 };
 
 module.exports.help = {
