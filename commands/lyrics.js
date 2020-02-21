@@ -23,14 +23,9 @@ module.exports.run = async (bot, message, args) => {
    
    let {body} = await superagent
 		.get(`https://api.lyrics.ovh/v1/${uname}/${text}`);
-const lyricsembed = new Discord.RichEmbed()
-.setTitle(`${text}\' Lyrics`)
-.setDescription(body.lyrics, { split: true })
-.setFooter('IAT bot') 
-.setTimestamp()
 
 
-		message.channel.send(lyricsembed);}
+		message.channel.send(`**${text}\'s lyrics**\n` body.lyrics, {split:true});}
 };
 
 module.exports.help = {
