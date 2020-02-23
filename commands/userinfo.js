@@ -13,7 +13,6 @@ module.exports.run = async (bot, message, args) => {
     var acknowledgements = 'None';
    
     const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
-    const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); }); 
     
     if(message.member.hasPermission("KICK_MEMBERS")){
         permissions.push("Kick Members");
