@@ -12,45 +12,45 @@ module.exports.run = async (bot, message, args) => {
     var permissions = [];
     var acknowledgements = 'None';
    
-    const member1 = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
+    const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
     
-    if(message.member1.hasPermission("KICK_MEMBERS")){
+    if(message.member.hasPermission("KICK_MEMBERS")){
         permissions.push("Kick Members");
     }
     
-    if(message.member1.hasPermission("BAN_MEMBERS")){
+    if(message.member.hasPermission("BAN_MEMBERS")){
         permissions.push("Ban Members");
     }
     
-    if(message.member1.hasPermission("ADMINISTRATOR")){
+    if(message.member.hasPermission("ADMINISTRATOR")){
         permissions.push("Administrator");
     }
 
-    if(message.member1.hasPermission("MANAGE_MESSAGES")){
+    if(message.member.hasPermission("MANAGE_MESSAGES")){
         permissions.push("Manage Messages");
     }
     
-    if(message.member1.hasPermission("MANAGE_CHANNELS")){
+    if(message.member.hasPermission("MANAGE_CHANNELS")){
         permissions.push("Manage Channels");
     }
     
-    if(message.member1.hasPermission("MENTION_EVERYONE")){
+    if(message.member.hasPermission("MENTION_EVERYONE")){
         permissions.push("Mention Everyone");
     }
 
-    if(message.member1.hasPermission("MANAGE_NICKNAMES")){
+    if(message.member.hasPermission("MANAGE_NICKNAMES")){
         permissions.push("Manage Nicknames");
     }
 
-    if(message.member1.hasPermission("MANAGE_ROLES")){
+    if(message.member.hasPermission("MANAGE_ROLES")){
         permissions.push("Manage Roles");
     }
 
-    if(message.member1.hasPermission("MANAGE_WEBHOOKS")){
+    if(message.member.hasPermission("MANAGE_WEBHOOKS")){
         permissions.push("Manage Webhooks");
     }
 
-    if(message.member1.hasPermission("MANAGE_EMOJIS")){
+    if(message.member.hasPermission("MANAGE_EMOJIS")){
         permissions.push("Manage Emojis");
     }
 
