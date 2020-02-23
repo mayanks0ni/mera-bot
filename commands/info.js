@@ -9,6 +9,7 @@ module.exports.run = async (bot, message, args) => {
                 .setColor("RANDOM")		
                 .setDescription('I am a bot programmed by SpideY!')
 			message.channel.sendEmbed(Infoembed);
+                .then(m=>m.react(`678864853880012831`));
 };
 
 module.exports.help = {
