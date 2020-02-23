@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
                 .addField('Owner', '**Spide¥#6125**')
                 .setColor("RANDOM")		
                 .setDescription('I am a bot programmed by SpideY!')
-			message.channel.sendEmbed(Infoembed);
+			message.channel.sendEmbed(Infoembed)
                 .then(m=>m.react(`678864853880012831`));
 };
 
