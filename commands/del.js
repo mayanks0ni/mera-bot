@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
      }else{
        await message.channel.messages.fetch({ limit: args[1] }).then(messages => { 
     message.channel.bulkDelete
-};
+)};
 
 module.exports.help = {
     name: "del"
