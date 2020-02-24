@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
       message.channel.sendEmbed(nodelperms);
      }else{
        message.delete()
-      message.bulkDelete(args[1]);
+      message.channel.bulkDelete(args[1]);
 };
 
 module.exports.help = {
