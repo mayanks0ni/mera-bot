@@ -8,9 +8,9 @@ module.exports.run = async (bot, message, args) => {
       .setTimestamp()
       message.channel.sendEmbed(nodelperms);
      }else{
-       await message.channel.messages.fetch({ limit: args[1] }).then(messages => { 
-    message.channel.bulkDelete
-)};
+       message.delete()
+      message.bulkDelete(args[1]);
+};
 
 module.exports.help = {
     name: "del"
