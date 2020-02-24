@@ -8,8 +8,8 @@ module.exports.run = async (bot, message, args) => {
       .setTimestamp()
       message.channel.sendEmbed(nodelperms);
      }else{
-       message.delete()
-    message.channel.bulkDelete(args[1]);}
+       await message.channel.messages.fetch({ limit: args[1] }).then(messages => { 
+    message.channel.bulkDelete
 };
 
 module.exports.help = {
