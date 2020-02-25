@@ -22,6 +22,10 @@ module.exports.run = async (bot, message, args) => {
 
 }
 
-module.exports.help = {
-    name: "urban"
+module.exports.config = {
+    name: "urban",
+    description: "A Command To Get The Definition Of The Provided Word From Urban Dictionary!",
+    usage: "+urban [word]",
+    accessableby: "Members",
+    aliases: ["urban", "ud"]
 }
