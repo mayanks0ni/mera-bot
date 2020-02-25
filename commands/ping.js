@@ -5,6 +5,10 @@ module.exports.run = async (bot, message, args) => {
         return pingMsg.edit('📡Ping - ' + Math.round(bot.ping) + 'ms📡');
 };
 
-module.exports.help = {
-    name: "ping"
-};
+module.exports.config = {
+    name: "ping",
+    description: "A Command To Check The Ping Of The Bot!",
+    usage: "+ping",
+    accessableby: "Members",
+    aliases: [""]
+}
