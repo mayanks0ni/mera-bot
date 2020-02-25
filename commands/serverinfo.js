@@ -47,6 +47,10 @@ module.exports.run = async (bot, message, args) => {
 
 };
 
-module.exports.help = {
-    name: "serverinfo"
-};
+module.exports.config = {
+    name: "serverinfo",
+    description: "A Command To View The Server\'s Info!",
+    usage: "+serverinfo",
+    accessableby: "Members",
+    aliases: ["si"]
+}
