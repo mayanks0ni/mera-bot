@@ -28,6 +28,10 @@ module.exports.run = async (bot, message, args) => {
 		 
 };
 
-module.exports.help = {
-    name: "helpdm"
-};
+module.exports.config = {
+    name: "helpdm",
+    description: "A Command To Get The Help Commands In Your DM!",
+    usage: "+helpdm",
+    accessableby: "Members",
+    aliases: ["hdm"]
+}
