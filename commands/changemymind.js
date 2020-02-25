@@ -23,6 +23,10 @@ module.exports.run = async (bot, message, args) => {
 		message.channel.send(tweetembed);}
 };
 
-module.exports.help = {
-    name: "cmm"
-};
+module.exports.config = {
+    name: "cmm",
+    description: "A Command To Get A Change My Mind Image For The Provided Text!",
+    usage: "+cmm [text]",
+    accessableby: "Members",
+    aliases: [""]
+}
