@@ -14,6 +14,10 @@ module.exports.run = async (bot, message, args) => {
 		message.channel.send(factembed);
 };
 
-module.exports.help = {
-    name: "fact"
-};
+module.exports.config = {
+    name: "fact",
+    description: "A Command To Get A Random Fact!",
+    usage: "+fact",
+    accessableby: "Members",
+    aliases: [""]
+}
