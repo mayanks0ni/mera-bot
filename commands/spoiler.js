@@ -12,6 +12,10 @@ module.exports.run = async (bot, message, args) => {
 			message.channel.sendEmbed(spoilerembed);
 };
 
-module.exports.help = {
-    name: "spoiler"
-};
+module.exports.config = {
+    name: "spoiler",
+    description: "A Command To Send The Provided Text In Spoiler Form Through The Bot!",
+    usage: "+spoiler [text]",
+    accessableby: "Members",
+    aliases: [""]
+}
