@@ -22,6 +22,10 @@ module.exports.run = async (bot, message, args) => {
 			}
 };
 
-module.exports.help = {
-    name: "kick"
-};
+module.exports.config = {
+    name: "kick",
+    description: "A Command To Kick The Mentioned User!",
+    usage: "+kick [user]",
+    accessableby: "Staffs & Moderators",
+    aliases: [""]
+}
