@@ -25,6 +25,10 @@ module.exports.run = async (bot, message, args) => {
 		message.channel.send(captchaembed);}
 };
 
-module.exports.help = {
-    name: "captcha"
-};
+module.exports.config = {
+    name: "captcha",
+    description: "A Command To View Captcha Image Of Your Avatar Or The Mentioned User\'s Avatar!",
+    usage: "+captcha [user]",
+    accessableby: "Members",
+    aliases: ["cap", "cpt"]
+}
