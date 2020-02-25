@@ -25,6 +25,10 @@ message.channel.send(notnsfw);
 	 
 };
 
-module.exports.help = {
-    name: "boobs"
-};
+module.exports.config = {
+    name: "boobs",
+    description: "A Command To View Boobs Images!",
+    usage: "+boobs",
+    accessableby: "Members",
+    aliases: ["tits", "boob", "tit"]
+}
