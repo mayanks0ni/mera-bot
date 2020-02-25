@@ -99,8 +99,8 @@ module.exports.run = async (bot, message, args) => {
         }
 	})
 
-if(args[0]) {
-        let command = args[0];
+if(args[1]) {
+        let command = args[1];
         if(bot.commands.has(command)) {
             command = bot.commands.get(command);
             var cmdhelpembed = new Discord.RichEmbed()
