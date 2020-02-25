@@ -38,6 +38,10 @@ module.exports.run = async (bot, message, args) => {
 
 };
 
-module.exports.help = {
-    name: "ban"
-};
+module.exports.config = {
+    name: "ban",
+    description: "A Command To Ban The Mentioned User!",
+    usage: "+ban [user]",
+    accessableby: "Staffs & Moderators",
+    aliases: [""]
+}
