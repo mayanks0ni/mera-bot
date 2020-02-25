@@ -24,6 +24,10 @@ module.exports.run = async (bot, message, args) => {
 			}
 };
 
-module.exports.help = {
-    name: "announce"
-};
+module.exports.config = {
+    name: "announce",
+    description: "A Commamd To Make Announcements in a Particular Channel or In Which The Command Is Used!",
+    usage: "+announce [channel] [text]",
+    accessableby: "Staffs & Moderators",
+    aliases: ["anc"]
+}
