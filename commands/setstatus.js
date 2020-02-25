@@ -21,6 +21,10 @@ message.channel.send(statusembed);
 }
 };
 
-module.exports.help = {
-    name: "setstatus"
-};
+module.exports.config = {
+    name: "setstatus",
+    description: "A Command To Set The Status Of The Bot!",
+    usage: "+setstatus [type] [status]",
+    accessableby: "Staffs & Moderators",
+    aliases: ["ss"]
+}
