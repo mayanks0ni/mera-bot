@@ -9,6 +9,10 @@ module.exports.run = async (bot, message, args) => {
    message.channel.sendEmbed(avatarembed);
 };
 
-module.exports.help = {
-    name: "avatar"
-};
+module.exports.config = {
+    name: "avatar",
+    description: "A Command To View Avatar Of Yourself Or The Mentioned User!",
+    usage: "+avatar [user]",
+    accessableby: "Members",
+    aliases: ["av"]
+}
