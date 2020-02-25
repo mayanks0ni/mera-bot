@@ -21,11 +21,12 @@ fs.readdir("./commands/", (err, files) => {
 	console.log(`Loaded ${jsfiles.length} commands`);
 
 	jsfiles.forEach((f, i) => {
-		let props = require(`./commands/${f}`);
-		console.log(`${i + 1}: ${f} loaded!`)
-		bot.commands.set(props.help.name, props);
-	});
-
+		let pull = require(`./commands/${f}`);
+        bot.commands.set(pull.config.name, pull);  
+        pull.config.aliases.forEach(alias => {
+            bot.aliases.set(alias, pull.config.name)
+        });
+    });
 });
 
 bot.on('ready', () =>{
