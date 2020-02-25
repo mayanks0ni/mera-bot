@@ -26,6 +26,10 @@ let men2 = message.mentions.users.first();
 	 } 
 };
 
-module.exports.help = {
-    name: "pat"
-};
+module.exports.config = {
+    name: "pat",
+    description: "A Command To Pat The Mentioned User!",
+    usage: "+pat [user]",
+    accessableby: "Members",
+    aliases: [""]
+}
