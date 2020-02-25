@@ -17,6 +17,10 @@ module.exports.run = async (bot, message, args) => {
                                 
 };
 
-module.exports.help = {
-    name: "suggest"
-};
+module.exports.config = {
+    name: "suggest",
+    description: "A Command To Make Suggestions!",
+    usage: "+suggest [suggestion]",
+    accessableby: "Members",
+    aliases: [""]
+}
