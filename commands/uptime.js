@@ -38,6 +38,10 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(uptimeembed);
 };
 
-module.exports.help = {
-    name: "uptime"
-};
+module.exports.config = {
+    name: "uptime",
+    description: "A Command To View The Uptime Of The Bot!",
+    usage: "+uptime",
+    accessableby: "Members",
+    aliases: ["ut"]
+}
