@@ -12,6 +12,10 @@ module.exports.run = async (bot, message, args) => {
       message.channel.bulkDelete(args[1]);}
 };
 
-module.exports.help = {
-    name: "del"
-};
+module.exports.config = {
+    name: "del",
+    description: "A Command To Delete A Particular Number Of Messages In The Channel!",
+    usage: "+del [amount]",
+    accessableby: "Staffs & Moderator",
+    aliases: ["clear"]
+}
