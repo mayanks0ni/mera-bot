@@ -31,6 +31,10 @@ module.exports.run = async (bot, message, args) => {
 			message.channel.sendEmbed(memeembed);
 };
 
-module.exports.help = {
-    name: "meme"
-};
+module.exports.config = {
+    name: "meme",
+    description: "A Command To View Memes From Reddit!",
+    usage: "+meme",
+    accessableby: "Members",
+    aliases: [""]
+}
