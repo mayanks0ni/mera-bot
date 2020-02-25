@@ -28,6 +28,10 @@ module.exports.run = async (bot, message, args) => {
 		message.channel.send(body.lyrics, {split:true});}
 };
 
-module.exports.help = {
-    name: "lyrics"
-};
+module.exports.config = {
+    name: "lyrics",
+    description: "A Command To View The Lyrics Of The Song!",
+    usage: "+lyrics [song]",
+    accessableby: "Members",
+    aliases: ["lyc"]
+}
