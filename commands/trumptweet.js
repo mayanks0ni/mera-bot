@@ -24,6 +24,10 @@ module.exports.run = async (bot, message, args) => {
 		message.channel.send(ttembed);}
 };
 
-module.exports.help = {
-    name: "trumptweet"
-};
+module.exports.config = {
+    name: "trumptweet",
+    description: "A Command To Get Trmup Tweet Image!",
+    usage: "+trmuptweet [text]",
+    accessableby: "Members",
+    aliases: ["tt"]
+}
