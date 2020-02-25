@@ -18,6 +18,10 @@ module.exports.run = async (bot, message, args) => {
 	
 };
 
-module.exports.help = {
-    name: "wallpaper"
-};
+module.exports.config = {
+    name: "wallpaper",
+    description: "A Command To Get A Random Wallpaper!",
+    usage: "+wallpaper",
+    accessableby: "Members",
+    aliases: ["wp"]
+}
