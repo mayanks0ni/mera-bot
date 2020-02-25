@@ -26,6 +26,10 @@ module.exports.run = async (bot, message, args) => {
 	 } 
 };
 
-module.exports.help = {
-    name: "hug"
-};
+module.exports.config = {
+    name: "hug",
+    description: "A Command To Hug The Mentioned User!",
+    usage: "+hug [user]",
+    accessableby: "Members",
+    aliases: [""]
+}
