@@ -23,6 +23,10 @@ module.exports.run = async (bot, message, args) => {
   }
 };
 
-module.exports.help = {
-    name: "4k"
-};
+module.exports.config = {
+    name: "4k",
+    description: "A Command To View 4k Nudes!",
+    usage: "+4k",
+    accessableby: "Members",
+    aliases: [""]
+}
