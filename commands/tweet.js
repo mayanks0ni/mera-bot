@@ -32,6 +32,10 @@ module.exports.run = async (bot, message, args) => {
 		message.channel.send(tweetembed);}
 };
 
-module.exports.help = {
-    name: "tweet"
-};
+module.exports.config = {
+    name: "tweet",
+    description: "A Command To Tweet Through The Provided Username!",
+    usage: "+tweet [username] [text]",
+    accessableby: "Members",
+    aliases: [""]
+}
