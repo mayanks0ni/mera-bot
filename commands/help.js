@@ -98,6 +98,21 @@ module.exports.run = async (bot, message, args) => {
             helpmsg.clearReactions();
         }
 	})
+
+if(args[0]) {
+        let command = args[0];
+        if(bot.commands.has(command)) {
+            command = bot.commands.get(command);
+            var cmdhelpembed = new Discord.RichEmbed()
+            .setColor(colours.cyan)
+            .setAuthor(`TestBOT HELP`, message.guild.iconURL)
+            .setThumbnail(bot.user.displayAvatarURL)
+            .setDescription(`The Bot\' Prefix is: '+'\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n**Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
+            .setFooter('IAT Bot') 
+            .setTimestamp()
+message.channel.send(cmdhelpembed);
+        }}
+
 };
 
 module.exports.config = {
@@ -105,5 +120,5 @@ module.exports.config = {
     description: "A Command To View The Help Page Of All Commands!",
     usage: "+help",
     accessableby: "Members",
-    aliases: [""]
+    aliases: ["h"]
 }
