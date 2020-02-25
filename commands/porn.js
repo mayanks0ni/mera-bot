@@ -24,6 +24,10 @@ module.exports.run = async (bot, message, args) => {
   }
 };
 
-module.exports.help = {
-    name: "porn"
-};
+module.exports.config = {
+    name: "porn",
+    description: "A Command To View Porn Images!",
+    usage: "+porn",
+    accessableby: "Members",
+    aliases: [""]
+}
