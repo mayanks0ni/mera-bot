@@ -16,6 +16,10 @@ module.exports.run = async (bot, message, args) => {
 message.channel.sendEmbed(nsfwembed);
 };
 
-module.exports.help = {
-    name: "helpnsfw"
-};
+module.exports.config = {
+    name: "helpsnfw",
+    description: "A Command To View NSFW Commands!",
+    usage: "+helpnsfw",
+    accessableby: "Members",
+    aliases: ["hnsfw"]
+}
