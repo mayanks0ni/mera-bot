@@ -7,6 +7,10 @@ module.exports.run = async (bot, message, args) => {
 			 
 };
 
-module.exports.help = {
-    name: "say"
-};
+module.exports.config = {
+    name: "say",
+    description: "A Command To Send The Message Through The Bot!",
+    usage: "+say [text]",
+    accessableby: "Members",
+    aliases: [""]
+}
