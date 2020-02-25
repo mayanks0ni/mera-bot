@@ -16,6 +16,10 @@ module.exports.run = async (bot, message, args) => {
 		message.channel.send(trashembed); 
 };
 
-module.exports.help = {
-    name: "trash"
-};
+module.exports.config = {
+    name: "trash",
+    description: "A Command To Get The Trash Image Of Yourself Or The Mentioned User!",
+    usage: "!userinfo (@mention)",
+    accessableby: "Members",
+    aliases: [""]
+}
