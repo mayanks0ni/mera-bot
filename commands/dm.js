@@ -17,6 +17,10 @@ module.exports.run = async (bot, message, args) => {
 
 };
 
-module.exports.help = {
-    name: "dm"
-};
+module.exports.config = {
+    name: "dm",
+    description: " A Command To Direct Message The Mentioned User To Through The Bot!",
+    usage: "+dm [user] [text]",
+    accessableby: "Staffs & Moderators",
+    aliases: ["send"]
+}
