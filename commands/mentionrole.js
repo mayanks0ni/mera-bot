@@ -21,6 +21,10 @@ module.exports.run = async (bot, message, args) => {
 		}	} 
 };
 
-module.exports.help = {
-    name: "mentionrole"
-};
+module.exports.config = {
+    name: "mentionrole",
+    description: "A Command To Mention The Role Through The Bot!",
+    usage: "+mentionrole [rolename]",
+    accessableby: "Staffs & Moderators",
+    aliases: ["mr"]
+}
