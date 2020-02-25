@@ -100,6 +100,10 @@ module.exports.run = async (bot, message, args) => {
 	})
 };
 
-module.exports.help = {
-    name: "help"
-};
+module.exports.config = {
+    name: "help",
+    description: "A Command To View The Help Page Of All Commands!",
+    usage: "+help",
+    accessableby: "Members",
+    aliases: [""]
+}
