@@ -23,6 +23,10 @@ module.exports.run = async (bot, message, args) => {
   }
 };
 
-module.exports.help = {
-    name: "hass"
-};
+module.exports.config = {
+    name: "hass",
+    description: "A Command To View Hentai Ass Images!",
+    usage: "+hass",
+    accessableby: "Members",
+    aliases: ["hentaiass"]
+}
