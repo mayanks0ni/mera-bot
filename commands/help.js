@@ -1,6 +1,21 @@
 const Discord = module.require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+if(args[1]) {
+        let command = args[1];
+        if(bot.commands.has(command)) {
+            command = bot.commands.get(command);
+            var cmdhelpembed = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(`Help Commands`, message.guild.iconURL)
+            .setThumbnail(bot.user.displayAvatarURL)
+            .setDescription(`The Bot\'s Prefix is: '+'\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n**Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
+            .setFooter('IAT Bot') 
+            .setTimestamp()
+message.channel.send(cmdhelpembed);
+        }}
+ if(!args[1]) {
+
 		  let helpemb = new Discord.RichEmbed()
                 .setAuthor('🗒️ Help Commands 🗒️')
                 .addField('👤 User Help Commands 👤', 'React With 👤 To Get More Info!')
@@ -99,19 +114,7 @@ module.exports.run = async (bot, message, args) => {
         }
 	})
 
-if(args[1]) {
-        let command = args[1];
-        if(bot.commands.has(command)) {
-            command = bot.commands.get(command);
-            var cmdhelpembed = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .setAuthor(`TestBOT HELP`, message.guild.iconURL)
-            .setThumbnail(bot.user.displayAvatarURL)
-            .setDescription(`The Bot\' Prefix is: '+'\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n**Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
-            .setFooter('IAT Bot') 
-            .setTimestamp()
-message.channel.send(cmdhelpembed);
-        }}
+}
 
 };
 
