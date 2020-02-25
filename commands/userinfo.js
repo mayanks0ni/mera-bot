@@ -79,6 +79,10 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send({embed});
 
 };
-module.exports.help = {
-    name: "userinfo"
-};
+module.exports.config = {
+    name: "userinfo",
+    description: "A Command To Vjew The Userinfo Of Yourself Or An User!",
+    usage: "+userinfo [user]",
+    accessableby: "Members",
+    aliases: ["ui"]
+}
