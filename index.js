@@ -5,6 +5,8 @@ const Canvas = require("canvas");
 const PREFIX = '+'; 
 
 bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
+
 
 fs.readdir("./commands/", (err, files) => {
 	if (err){
