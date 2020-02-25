@@ -23,6 +23,10 @@ module.exports.run = async (bot, message, args) => {
   }
 };
 
-module.exports.help = {
-    name: "anal"
-};
+module.exports.config = {
+    name: "anal",
+    description: "A Commamd To View Anal Images!",
+    usage: "+anal",
+    accessableby: "Members",
+    aliases: ["an"]
+}
