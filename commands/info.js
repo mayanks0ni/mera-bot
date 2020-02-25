@@ -12,6 +12,10 @@ module.exports.run = async (bot, message, args) => {
                 .then(m=>m.react(`678864853880012831`));
 };
 
-module.exports.help = {
-    name: "info"
-};
+module.exports.config = {
+    name: "info",
+    description: "A Command To View The Info Of The Bot!",
+    usage: "+info",
+    accessableby: "Members",
+    aliases: [""]
+}
