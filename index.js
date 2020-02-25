@@ -95,11 +95,11 @@ bot.on('message',async message=>{
        message.channel.send(`${menrole}`);
 	}}else{
         let msgArray = message.content.split(/\s+/g)
-        let command = msgArray[0];
+        let cmd = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
 	if (!message.content.startsWith(PREFIX)|| message.author.bot) return;
         if(message.channel.type === "dm") return; 
-	let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+	let commandfile = bot.commands.get(cmd.slice(PREFIX.length)) || bot.commands.get(bot.aliases.get(cmd.slice(PREFIX.length)))
         if(commandfile) commandfile.run(bot,message,args);}
 
 	});
