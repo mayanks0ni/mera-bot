@@ -14,48 +14,48 @@ module.exports.run = async (bot, message, args) => {
    
     const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
     
-    if(message.member.hasPermission("KICK_MEMBERS")){
+    if(member.hasPermission("KICK_MEMBERS")){
         permissions.push("Kick Members");
     }
     
-    if(message.member.hasPermission("BAN_MEMBERS")){
+    if(member.hasPermission("BAN_MEMBERS")){
         permissions.push("Ban Members");
     }
     
-    if(message.member.hasPermission("ADMINISTRATOR")){
+    if(member.hasPermission("ADMINISTRATOR")){
         permissions.push("Administrator");
     }
 
-    if(message.member.hasPermission("MANAGE_MESSAGES")){
+    if(member.hasPermission("MANAGE_MESSAGES")){
         permissions.push("Manage Messages");
     }
     
-    if(message.member.hasPermission("MANAGE_CHANNELS")){
+    if(member.hasPermission("MANAGE_CHANNELS")){
         permissions.push("Manage Channels");
     }
     
-    if(message.member.hasPermission("MENTION_EVERYONE")){
+    if(member.hasPermission("MENTION_EVERYONE")){
         permissions.push("Mention Everyone");
     }
 
-    if(message.member.hasPermission("MANAGE_NICKNAMES")){
+    if(member.hasPermission("MANAGE_NICKNAMES")){
         permissions.push("Manage Nicknames");
     }
 
-    if(message.member.hasPermission("MANAGE_ROLES")){
+    if(member.hasPermission("MANAGE_ROLES")){
         permissions.push("Manage Roles");
     }
 
-    if(message.member.hasPermission("MANAGE_WEBHOOKS")){
+    if(member.hasPermission("MANAGE_WEBHOOKS")){
         permissions.push("Manage Webhooks");
     }
 
-    if(message.member.hasPermission("MANAGE_EMOJIS")){
+    if(member.hasPermission("MANAGE_EMOJIS")){
         permissions.push("Manage Emojis");
     }
 
     if(permissions.length == 0){
-        permissions.push("No Key Permissions Found");
+        permissions.push("No Permissions Found!");
     }
 
     if(`<@${member.user.id}>` == message.guild.owner){
