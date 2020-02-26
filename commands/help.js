@@ -9,7 +9,11 @@ if(args[1]) {
             .setColor("RANDOM")
             .setAuthor(`Help Commands`, message.guild.iconURL)
             .setThumbnail(bot.user.displayAvatarURL)
-            .setDescription(`The Bot\'s Prefix is: '+'\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n**Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
+            .addField(`Command Name: ${command.config.name}`)
+            .addField(`Description`, `${command.config.description || "No Description"}`)
+            .addField(`Usage`, `${command.config.usage || "No Usage"}`)
+            .addField(`Accessable by`, `${command.config.accessableby || "Members"}`)
+            .addField(`Aliases`, `${command.config.aliases || "No Alias"}`)
             .setFooter('IAT Bot') 
             .setTimestamp()
 message.channel.send(cmdhelpembed);
