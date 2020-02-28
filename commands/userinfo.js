@@ -71,7 +71,7 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
         .addField("Status",`${status[member.user.presence.status]}`, true)
         .addField('Joined at: ',`${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-        .addField(" Account Created at: ",`${moment(message.author.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
+        .addField(" Account Created at: ",`${moment(member.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
         .addField("Permissions: ", `${permissions.join(', ')}`, true)
         .addField(`Roles [${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}]`,`${member.roles.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id }>`).join(" **|** ") || "No Roles"}`, true)
         .addField("Acknowledgements: ", `${acknowledgements}`, true);
