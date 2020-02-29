@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     var permissions = [];
     var acknowledgements = 'None';
    
-    const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
+    const member = message.mentions.members.first() || message.guild.members.get(args[1]) || message.member;
     
     if(member.hasPermission("KICK_MEMBERS")){
         permissions.push("Kick Members");
@@ -53,6 +53,46 @@ module.exports.run = async (bot, message, args) => {
     if(member.hasPermission("MANAGE_EMOJIS")){
         permissions.push("Manage Emojis");
     }
+    
+    if(member.hasPermission("SEND_MESSAGES")){
+				permissions.push("Send Messages");
+			}
+
+            if(member.hasPermission("READ_MESSAGES")){
+				permissions.push("Read Messages");
+			}
+
+			if(member.hasPermission("ADD_REACTIONS")){
+				permissions.push("Add Reactions");
+			}
+
+			if(member.hasPermission("ATTACH_FILES")){
+				permissions.push("Attach Files");
+			}
+
+			if(member.hasPermission("CHANGE_NICKNAME")){
+				permissions.push("Change Nickname");
+			}
+
+			if(member.hasPermission("CONNECT")){
+				permissions.push("Connect");
+			}
+
+			if(member.hasPermission("DEAFEN_MEMBERS")){
+				permissions.push("Deafen Members");
+			}
+
+			if(member.hasPermission("READ_MESSAGE_HISTORY")){
+				permissions.push("Read Message History");
+			}
+
+			if(member.hasPermission("MUTE_MEMBERS")){
+				permissions.push("Mute Members");
+			}
+
+			if(member.hasPermission("SPEAK")){
+				permissions.push("Speak");
+			}
 
     if(permissions.length == 0){
         permissions.push("No Permissions Found!");
@@ -71,7 +111,7 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
         .addField("Status",`${status[member.user.presence.status]}`, true)
         .addField('Joined at: ',`${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-        .addField(" Account Created at: ",`${moment(member.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
+        .addField(" Account Created at: ",`${moment(member.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
         .addField("Permissions: ", `${permissions.join(', ')}`, true)
         .addField(`Roles [${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}]`,`${member.roles.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id }>`).join(" **|** ") || "No Roles"}`, true)
         .addField("Acknowledgements: ", `${acknowledgements}`, true);
