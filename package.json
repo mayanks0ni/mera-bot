@@ -15,7 +15,6 @@
     "eco": "^1.1.0-rc-3",
     "fs": "0.0.1-security",
     "moment": "^2.24.0",
-    "node": "^12.16.1",
     "node-fetch": "^2.6.0",
     "node-gyp": "^6.1.0",
     "random-puppy": "^1.1.0",
