@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
 };
 
 module.exports.config = {
-    name: "role",
+    name: "takerole",
     description: "A Command To Remove Role Any Role To A PArticular User!!",
     usage: "+takerole [user] [rolename]",
     accessableby: "Staffs & Moderator",
