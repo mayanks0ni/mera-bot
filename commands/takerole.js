@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "takerole",
-    description: "A Command To Remove Role Any Role To A PArticular User!!",
+    description: "A Command To Remove Role Any Role From A Particular User!!",
     usage: "+takerole [user] [rolename]",
     accessableby: "Staffs & Moderator",
     aliases: ["removerole", "rrole"]
