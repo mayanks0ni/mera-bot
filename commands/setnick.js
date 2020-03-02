@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 	await member12.setNickname(nickname)
 	return message.channel.send(new Discord.RichEmbed().setTitle(`Successfully Changed ${member12.displayName} To ${nickname}!`).setColor("RANDOM").setFooter('IAT Bot').setTimestamp());
 }
-}}
+}
 };
 
 module.exports.config = {
