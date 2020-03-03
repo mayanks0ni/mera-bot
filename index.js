@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
 const Canvas = require("canvas");
+const fetch = require("node-fetch");
 const PREFIX = '+'; 
 
 bot.commands = new Discord.Collection();
@@ -94,14 +95,22 @@ bot.on('message',async message=>{
 	if(message.content.startsWith("Hey")){
        message.channel.send(`${menrole}`);
 	}}else{
+		if(message.author.bot || message.channel.type === "dm") return;
+		if (message.channel.id === "684344369150689292") {
+		let msg = message.content
+		const url = `https://some-random-api.ml/chatbot?message=${msg}`;
+            let res; 
+            res = await fetch(url).then(url => url.json());
+			message.channel.send(res.response)
+	} else {
         let msgArray = message.content.split(/\s+/g)
         let cmd = msgArray[0];
 	let args = message.content.substring(PREFIX.length).split(" ");
-	if (!message.content.startsWith(PREFIX)|| message.author.bot) return;
+	if (!message.content.startsWith(PREFIX)) return;
         if(message.channel.type === "dm") return; 
 	let commandfile = bot.commands.get(cmd.slice(PREFIX.length)) || bot.commands.get(bot.aliases.get(cmd.slice(PREFIX.length)))
         if(commandfile) commandfile.run(bot,message,args);}
-
+	}
 	});
 
 
