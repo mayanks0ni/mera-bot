@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 			  .setColor(0xccff80)
 			  .setFooter(`Suggestion by ${message.author.tag}`)
                           .setTimestamp()
-			  bot.channels.get("629716423656079380").send(suggested)
+			  bot.channels.get("629716423656079380" || "685159538386796547").send(suggested)
 			  .then(function (message) {
 				message.react("👍")
 				.then(() => message.react('👎'))})
